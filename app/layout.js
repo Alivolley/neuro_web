@@ -1,4 +1,12 @@
+'use client';
+
+import { getDesignTokens } from './configs/theme';
 import './globals.css';
+
+//MUI
+import { ThemeProvider, createTheme } from '@mui/material';
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 export const metadata = {
     title: 'Create Next App',
@@ -6,9 +14,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const themeConfig = createTheme(getDesignTokens('light'));
+
     return (
         <html lang='en'>
-            <body>{children}</body>
+            <body>
+                <Provider store={store}>
+                    <ThemeProvider theme={themeConfig}>{children}</ThemeProvider>
+                </Provider>
+            </body>
         </html>
     );
 }
