@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer {
+    @font-face {
+        font-family: 'avgardn';
+        src: url('/fonts/AVGARDN.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'avgardnItalic';
+        src: url('/fonts/AVGARDNI.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'pubg';
+        src: url('/fonts/Pubg-Font.ttf') format('truetype');
+    }
+}

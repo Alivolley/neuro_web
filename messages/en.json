@@ -1,5 +1,9 @@
 {
-    "Index": {
-        "title": "Hello world!"
+    "header": {
+        "Product": "Product",
+        "Our team": "Our team",
+        "Contact us": "Contact us",
+        "Articles": "Articles",
+        "Change lang": "Change lang"
     }
 }
