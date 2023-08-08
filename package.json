@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^5.0.0-canary-7118f5dd7-20230705",
     "next": "13.4.12",
+    "next-intl": "^3.0.0-beta.9",
     "postcss": "8.4.27",
     "prettier": "^3.0.1",
     "prettier-eslint": "^15.0.1",
