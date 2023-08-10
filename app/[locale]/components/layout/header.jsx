@@ -20,7 +20,7 @@ const Header = ({ currentLocale }) => {
     const t = useTranslations('header');
 
     return (
-        <header className='text-menuItemColor font-avgardn flex justify-between h-[120px] items-center'>
+        <header className='text-menuItemColor font-avgardn flex justify-between h-[120px] items-center sticky top-0'>
             <div>
                 <Image src={logoHeader} alt='header logo' />
             </div>
@@ -39,7 +39,9 @@ const Header = ({ currentLocale }) => {
                         <Image src={searchImage} alt='search' />
                     </li>
                 </ul>
-                <Button className='customMd:hidden' icon={menu_toggler_icon} onClick={() => setMobileMenuStatus(true)} />
+                <div className='customMd:hidden'>
+                    <Button icon={menu_toggler_icon} onClick={() => setMobileMenuStatus(true)} />
+                </div>
             </div>
             <Drawer anchor='right' open={mobileMenuStatus} onClose={() => setMobileMenuStatus(false)}>
                 <p className='w-[250px] p-7 bg-buttonBgColor h-full text-menuItemColor'>
