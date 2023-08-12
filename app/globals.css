@@ -7,12 +7,30 @@
         font-family: 'avgardn';
         src: url('/fonts/AVGARDN.ttf') format('truetype');
     }
+
     @font-face {
         font-family: 'avgardnItalic';
         src: url('/fonts/AVGARDNI.ttf') format('truetype');
     }
+
     @font-face {
         font-family: 'pubg';
         src: url('/fonts/Pubg-Font.ttf') format('truetype');
     }
+
+    @font-face {
+        font-family: 'aubrey';
+        src: url('/fonts/AUBREY1__.TTF') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'picoopic_Regular';
+        src: url('/fonts/persians/picoopic-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'titre_Zebr';
+        src: url('/fonts/persians/titre_Zebr.ttf') format('truetype');
+    }
+
 }

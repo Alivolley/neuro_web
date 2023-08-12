@@ -18,6 +18,7 @@ const AppLayout = ({ children, currentLocale }) => {
             <ThemeProvider theme={themeConfig}>
                 <AppLayoutStyle currentLocale={currentLocale}>
                     <div className='left_line'></div>
+                    <div className='left_box'></div>
                     <Header currentLocale={currentLocale} />
                     {children}
                 </AppLayoutStyle>

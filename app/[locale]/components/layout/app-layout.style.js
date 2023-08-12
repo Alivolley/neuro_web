@@ -3,8 +3,12 @@ import styled from '@emotion/styled';
 //Assets
 import appBg from './../../../assets/images/appBackground.png';
 
-export const AppLayoutStyle = styled.div(({ currentLocale }) => {
+export const AppLayoutStyle = styled.div(({ currentLocale, theme }) => {
     return {
+        ...(currentLocale === 'fa' && {
+            direction: 'rtl'
+        }),
+
         position: 'relative',
         backgroundImage: `url(${appBg.src})`,
         backgroundPosition: 'bottom center',
@@ -22,16 +26,44 @@ export const AppLayoutStyle = styled.div(({ currentLocale }) => {
             position: 'absolute',
             top: '0',
             bottom: '0',
-            left: '29px',
-            width: '1px',
             background: 'linear-gradient(90deg, #797F4A 0%, rgba(56, 69, 58, 0.52) 111.13%)',
-            '@media (min-width: 900px)': {
-                left: '63px'
-            }
+            width: '1px',
+
+            ...(currentLocale === 'en' && {
+                left: '29px',
+                '@media (min-width: 900px)': {
+                    left: '63px'
+                }
+            }),
+
+            ...(currentLocale === 'fa' && {
+                right: '29px',
+                '@media (min-width: 900px)': {
+                    right: '63px'
+                }
+            })
         },
 
-        ...(currentLocale === 'fa' && {
-            direction: 'rtl'
-        })
+        '& .left_box': {
+            position: 'absolute',
+            top: '230px',
+            width: '82px',
+            height: '170px',
+            background: theme.colors.buttonBgColor,
+
+            ...(currentLocale === 'en' && {
+                left: '30px',
+                '@media (min-width: 900px)': {
+                    left: '64px'
+                }
+            }),
+
+            ...(currentLocale === 'fa' && {
+                right: '30px',
+                '@media (min-width: 900px)': {
+                    right: '64px'
+                }
+            })
+        }
     };
 });

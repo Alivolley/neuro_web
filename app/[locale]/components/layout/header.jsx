@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next-intl/link';
@@ -12,36 +13,55 @@ import Button from '../form-group/button';
 
 //MUI
 import { Drawer } from '@mui/material';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Header = ({ currentLocale }) => {
     const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
-
     const t = useTranslations('header');
+    const params = usePathname();
+
+    let detectedRoute = null;
+    if (params?.startsWith('/en')) {
+        const link = params.replace('/en', '');
+        detectedRoute = link;
+    } else {
+        detectedRoute = params;
+    }
 
     return (
         <header className='text-menuItemColor font-avgardn flex justify-between h-[120px] items-center sticky top-0'>
-            <div>
-                <Image src={logoHeader} alt='header logo' />
-            </div>
-            <div>
-                <ul className='hidden customMd:flex items-center gap-[20px] lg:gap-[50px] xl:gap-[70px]'>
-                    <li>{t('Product')}</li>
-                    <li>{t('Our team')}</li>
-                    <li>{t('Contact us')}</li>
-                    <li>{t('Articles')}</li>
-                    <li>
-                        <Link href='/' locale={currentLocale === 'fa' ? 'en' : 'fa'}>
-                            {t('Change lang')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Image src={searchImage} alt='search' />
-                    </li>
-                </ul>
-                <div className='customMd:hidden'>
+            <div className='flex items-center gap-3 sm:gap-10'>
+                <div className='customMd:hidden w-[25px] sm:w-auto'>
                     <Button icon={menu_toggler_icon} onClick={() => setMobileMenuStatus(true)} />
                 </div>
+                <Link href='/' className='w-[125px] sm:w-auto'>
+                    <Image src={logoHeader} alt='header logo' />
+                </Link>
+            </div>
+            <div>
+                <ul
+                    className={`flex items-center gap-[20px] lg:gap-[50px] xl:gap-[70px] ${
+                        currentLocale === 'fa' ? 'font-picoopicRegular' : ''
+                    }`}
+                >
+                    <li className='hidden customMd:list-item'>{t('Product')}</li>
+                    <li className='hidden customMd:list-item'>{t('Our team')}</li>
+                    <li className='hidden customMd:list-item'>{t('Contact us')}</li>
+                    <li className='hidden customMd:list-item'>{t('Articles')}</li>
+                    <li>
+                        <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'}>
+                            <div className='hidden customMd:flex items-center justify-center gap-[6px]'>
+                                <p className='font-picoopicRegular'>فارسی</p>
+                                <span className='h-[2px] w-6 bg-menuItemColor'></span>
+                                <p>EN</p>
+                            </div>
+                            <p className={'customMd:hidden font-picoopicRegular'}>{currentLocale === 'fa' ? 'EN' : 'فارسی'}</p>
+                        </Link>
+                    </li>
+                    <li className='w-[35px] sm:w-auto'>
+                        <Button icon={searchImage} onClick={() => {}} />
+                    </li>
+                </ul>
             </div>
             <Drawer anchor='right' open={mobileMenuStatus} onClose={() => setMobileMenuStatus(false)}>
                 <p className='w-[250px] p-7 bg-buttonBgColor h-full text-menuItemColor'>

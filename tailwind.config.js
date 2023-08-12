@@ -24,7 +24,10 @@ module.exports = {
             fontFamily: {
                 avgardn: 'avgardn',
                 avgardnItalic: 'avgardnItalic',
-                pubg: 'pubg'
+                pubg: 'pubg',
+                aubrey: 'aubrey',
+                picoopicRegular: 'picoopic_Regular',
+                titreZebr: 'titre_Zebr'
             }
         }
     },
