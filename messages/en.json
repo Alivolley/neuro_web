@@ -4,5 +4,14 @@
         "Our team": "Our team",
         "Contact us": "Contact us",
         "Articles": "Articles"
+    },
+    "searchModal": {
+        "Search in neuro web": "Search in neuro web",
+        "Please enter some word": "Please enter some word",
+        "Search neuro web": "Search neuro web ...",
+        "Other ways to search": "Other ways to search",
+        "Search": "Search",
+        "Instagram": "Instagram",
+        "Linkedin": "Linkedin"
     }
 }

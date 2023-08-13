@@ -5,6 +5,7 @@ import Link from 'next-intl/link';
 
 //Assets
 import logoHeader from './../../../assets/images/logoHeader.png';
+import logoHeaderPersian from './../../../assets/images/logoHeaderPersian.png';
 import searchImage from './../../../assets/icons/searchHeader.png';
 import menu_toggler_icon from './../../../assets/icons/menu_toggler_icon.svg';
 
@@ -14,8 +15,11 @@ import Button from '../form-group/button';
 //MUI
 import { Drawer } from '@mui/material';
 import { usePathname } from 'next/navigation';
+import ModalComponent from '../template/modal-component';
+import HeaderSearch from '../header-search';
 
 const Header = ({ currentLocale }) => {
+    const [searchModalStatus, setSearchModalStatus] = useState(false);
     const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
     const t = useTranslations('header');
     const params = usePathname();
@@ -28,6 +32,10 @@ const Header = ({ currentLocale }) => {
         detectedRoute = params;
     }
 
+    const closeSearchModalHandler = () => {
+        setSearchModalStatus(false);
+    };
+
     return (
         <header className='text-menuItemColor font-avgardn flex justify-between h-[120px] items-center sticky top-0'>
             <div className='flex items-center gap-3 sm:gap-10'>
@@ -35,7 +43,7 @@ const Header = ({ currentLocale }) => {
                     <Button icon={menu_toggler_icon} onClick={() => setMobileMenuStatus(true)} />
                 </div>
                 <Link href='/' className='w-[125px] sm:w-auto'>
-                    <Image src={logoHeader} alt='header logo' />
+                    <Image src={currentLocale === 'fa' ? logoHeaderPersian : logoHeader} alt='header logo' />
                 </Link>
             </div>
             <div>
@@ -59,7 +67,7 @@ const Header = ({ currentLocale }) => {
                         </Link>
                     </li>
                     <li className='w-[35px] sm:w-auto'>
-                        <Button icon={searchImage} onClick={() => {}} />
+                        <Button icon={searchImage} onClick={() => setSearchModalStatus(true)} />
                     </li>
                 </ul>
             </div>
@@ -69,6 +77,9 @@ const Header = ({ currentLocale }) => {
                     voluptatum porro vel, magni at sapiente, cumque iure. Recusandae iusto adipisci ab ducimus.
                 </p>
             </Drawer>
+            <ModalComponent show={searchModalStatus} handleClose={closeSearchModalHandler} fullWidth={true} size='md'>
+                <HeaderSearch />
+            </ModalComponent>
         </header>
     );
 };

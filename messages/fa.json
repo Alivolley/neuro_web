@@ -4,5 +4,14 @@
         "Our team": "تیم ما",
         "Contact us": "ارتباط با ما",
         "Articles": "مقالات"
+    },
+    "searchModal": {
+        "Search in neuro web": "جست و جو در نورو وب",
+        "Please enter some word": "لطفا کلمه ای را وارد کنید",
+        "Search neuro web": "جست و جوی نورو وب ...",
+        "Other ways to search": "راه های جست و جوی دیگر",
+        "Search": "جست و جو",
+        "Instagram": "Instagram",
+        "Linkedin": "Linkedin"
     }
 }

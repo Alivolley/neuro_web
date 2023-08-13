@@ -6,7 +6,7 @@ import { CircularProgress } from '@mui/material';
 
 const Button = ({ className, loading, icon, text, disabled, type = 'button', onClick }) => {
     return (
-        <ButtonStyle className={`text-black ${className}`} disabled={loading || disabled} type={type} onClick={onClick}>
+        <ButtonStyle className={`${className}`} disabled={loading || disabled} type={type} onClick={onClick}>
             {loading && (
                 <p className='progress_wrapper bg-slate-200'>
                     <CircularProgress size={15} color='inherit' />

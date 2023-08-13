@@ -7,7 +7,7 @@ const InputComponent = ({ type = 'text', detail, placeholder, disabled, error, c
         <InputComponentWrapper showArrows={showArrows}>
             <input
                 type={type}
-                className={`border-[1px] border-stone-500 rounded-md p-[10px] ${error ? 'border-red-600' : ''} ${className}`}
+                className={`${error ? 'border-red-600' : ''} ${className}`}
                 {...detail}
                 placeholder={placeholder}
                 disabled={disabled}
