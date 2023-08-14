@@ -65,14 +65,15 @@ export default function Home() {
                                         <BorderedText>{t('describeUiUx')}</BorderedText>
                                     </div>
 
-                                    <Link href={'/'} className=''>
+                                    <Link href={'/'}>
                                         <Button
                                             text={t('more info')}
                                             icon={locale === 'fa' ? arrowIconReverse : arrowIcon}
                                             className={`text-buttonTextColor border-[1px] border-solid bg-buttonBgColor
                                              border-borderColor py-[10px] px-[20px] rounded-[2px] font-aubrey my-[90px]
                                              shadow-customButtonShadow ${locale === 'fa' ? 'font-picoopicRegular' : ''}`}
-                                        ></Button>
+                                            // loading={true}
+                                        />
                                     </Link>
                                 </div>
                             </Grid>
