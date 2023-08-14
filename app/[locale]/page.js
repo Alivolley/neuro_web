@@ -1,5 +1,13 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next-intl/link';
+import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+
+//Assets
+import arrowIcon from './../assets/icons/arrowIcon.svg';
+import arrowIconReverse from './../assets/icons/arrowIconReverse.svg';
+import { HomeStyle } from './home.style';
 
 //Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,52 +19,67 @@ import 'swiper/css/pagination';
 //MUI
 import { Grid } from '@mui/material';
 
+//Components
+import Button from './components/form-group/button';
+import HeaderTitle from './components/template/header-title';
+import BorderedText from './components/template/bordered-text';
+
 export default function Home() {
     const [activeSlide, setActiveSlide] = useState(0);
 
+    const t = useTranslations('home');
+    const { locale } = useParams();
+
     return (
-        <main className=''>
-            <Grid container>
-                {/* <Grid item md={8} className='bg-stone-100'>
-                    <Swiper
-                        pagination={true}
-                        navigation={true}
-                        modules={[Pagination, Navigation]}
-                        loop
-                        className='mySwiper'
-                        onSwiper={swiper => setActiveSlide(swiper.realIndex)}
-                        onSlideChange={swiper => setActiveSlide(swiper.realIndex)}
-                    >
-                        <SwiperSlide>
-                            <p className='text-goldColor'>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi maxime provident in repudiandae perferendis
-                                ipsa quod consectetur quisquam est accusantium dolores ipsum laudantium fuga numquam totam deleniti
-                                quibusdam, voluptatem explicabo!
-                            </p>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <p className='text-goldColor'>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi maxime provident in repudiandae perferendis
-                                ipsa quod consectetur quisquam est accusantium dolores ipsum laudantium fuga numquam totam deleniti
-                                quibusdam, voluptatem explicabo!
-                            </p>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <p className='text-goldColor'>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi maxime provident in repudiandae perferendis
-                                ipsa quod consectetur quisquam est accusantium dolores ipsum laudantium fuga numquam totam deleniti
-                                quibusdam, voluptatem explicabo!
-                            </p>
-                        </SwiperSlide>
-                    </Swiper>
+        <HomeStyle>
+            <Swiper
+                pagination={true}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                loop
+                className='mySwiper'
+                onSwiper={swiper => setActiveSlide(swiper.realIndex)}
+                onSlideChange={swiper => setActiveSlide(swiper.realIndex)}
+            >
+                <Grid container>
+                    <SwiperSlide>
+                        <Grid container>
+                            <Grid item xs={12} md={6}>
+                                <div className='mt-[140px] sm:mt-[110px]'>
+                                    <div className='ml-5'>
+                                        <div
+                                            className={`flex flex-wrap sm:gap-2 text-textColor ${
+                                                locale === 'fa'
+                                                    ? 'font-picoopicRegular mb-[20px] font-extralight'
+                                                    : 'font-aubrey tracking-[3px] sm:tracking-[7px] uppercase text-[9px] sm:text-[12px] sm:mb-[-20px]'
+                                            }`}
+                                        >
+                                            <p>{t('userInterface')}</p>
+                                            <p>{t('experience')}</p>
+                                        </div>
+                                        <HeaderTitle>{t('ui_ux design')}</HeaderTitle>
+                                    </div>
+
+                                    <div className='mt-[120px]'>
+                                        <BorderedText>{t('describeUiUx')}</BorderedText>
+                                    </div>
+
+                                    <Link href={'/'} className=''>
+                                        <Button
+                                            text={t('more info')}
+                                            icon={locale === 'fa' ? arrowIconReverse : arrowIcon}
+                                            className={`text-buttonTextColor border-[1px] border-solid bg-buttonBgColor
+                                             border-borderColor py-[10px] px-[20px] rounded-[2px] font-aubrey my-[90px]
+                                             shadow-customButtonShadow ${locale === 'fa' ? 'font-picoopicRegular' : ''}`}
+                                        ></Button>
+                                    </Link>
+                                </div>
+                            </Grid>
+                            <Grid item xs={12} md={6}></Grid>
+                        </Grid>
+                    </SwiperSlide>
                 </Grid>
-                <Grid item md={4}>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolor nemo eaque, minima illo sequi dicta hic
-                        mollitia culpa quo accusamus ullam sit similique deserunt obcaecati provident error quod perspiciatis.
-                    </p>
-                </Grid> */}
-            </Grid>
-        </main>
+            </Swiper>
+        </HomeStyle>
     );
 }

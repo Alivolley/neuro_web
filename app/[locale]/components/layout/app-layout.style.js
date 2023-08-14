@@ -46,7 +46,7 @@ export const AppLayoutStyle = styled.div(({ currentLocale, theme }) => {
 
         '& .left_box': {
             position: 'absolute',
-            top: '230px',
+            top: '200px',
             width: '82px',
             height: '170px',
             background: theme.colors.buttonBgColor,

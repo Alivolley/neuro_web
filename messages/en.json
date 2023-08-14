@@ -13,5 +13,12 @@
         "Search": "Search",
         "Instagram": "Instagram",
         "Linkedin": "Linkedin"
+    },
+    "home": {
+        "userInterface": "user - interface ",
+        "experience": " , experience",
+        "ui_ux design": "ui.ux design",
+        "describeUiUx": "Boost your brands online presence with captivating UI/UX design that engages and delights youraudience. Our skilled designers create stunning, user-friendly interfaces for seamlessnavigation and lasting impact. Invest in exceptional UI/UX design to maximize engagement,conversions, and establish your brand as a digital leader.",
+        "more info": "MORE INFO"
     }
 }

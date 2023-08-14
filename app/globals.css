@@ -20,7 +20,7 @@
 
     @font-face {
         font-family: 'aubrey';
-        src: url('/fonts/AUBREY1__.TTF') format('truetype');
+        src: url('/fonts/AUBREY.TTF') format('truetype');
     }
 
     @font-face {
@@ -29,8 +29,8 @@
     }
 
     @font-face {
-        font-family: 'titre_Zebr';
-        src: url('/fonts/persians/titre_Zebr.ttf') format('truetype');
+        font-family: 'titre_Zebr2';
+        src: url('/fonts/persians/TitrZebr2.ttf') format('truetype');
     }
 
 }
