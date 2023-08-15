@@ -1,6 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
+    content: [
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './pages/en/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/en/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/en/**/*.{js,ts,jsx,tsx,mdx}',
+        './pages/fa/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/fa/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/fa/**/*.{js,ts,jsx,tsx,mdx}'
+    ],
     theme: {
         extend: {
             screens: {
