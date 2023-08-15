@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { IconButton } from '@mui/material';
 
-export const ButtonStyle = styled(IconButton)(() => ({
+export const ButtonStyle = styled(IconButton)(props => ({
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
@@ -12,7 +12,10 @@ export const ButtonStyle = styled(IconButton)(() => ({
     fontSize: '16px',
 
     '&:disabled': {
-        backgroundColor: '#E2E8F0'
+        '& .progress_wrapper': {
+            backgroundColor: props.theme.colors.disableBgColor,
+            color: props.theme.colors.disableTextColor
+        }
     },
 
     '& .progress_wrapper': {

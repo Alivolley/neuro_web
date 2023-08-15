@@ -9,6 +9,8 @@ export const getDesignTokens = mode => ({
         borderColor: '#A4B28E',
         buttonBgColor: '#131514',
         titleColor: '#958375',
-        numberColor: '#CCAA60'
+        numberColor: '#CCAA60',
+        disableBgColor: '#3C3E39',
+        disableTextColor: '#676A61'
     }
 });

@@ -72,7 +72,6 @@ export default function Home() {
                                             className={`text-buttonTextColor border-[1px] border-solid bg-buttonBgColor border-borderColor py-[10px] px-[20px] rounded-[2px] font-aubrey my-[90px] mb-[5000px] shadow-customButtonShadow ${
                                                 locale === 'fa' ? 'font-picoopicRegular' : ''
                                             }`}
-                                            // loading={true}
                                         />
                                     </Link>
                                 </div>
