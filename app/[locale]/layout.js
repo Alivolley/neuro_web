@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 
 //Assets
-import './globals.css';
+import './../globals.css';
 
 //Components
 import AppLayout from './components/layout/app-layout';

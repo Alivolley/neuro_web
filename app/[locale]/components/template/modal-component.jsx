@@ -12,7 +12,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />;
 });
 
-const ModalComponent = ({ show, handleClose, size = 'xs', children, fullWidth = false, className }) => {
+const ModalComponent = ({ show, handleClose, size = 'xs', children, fullWidth = false, className, sx }) => {
     return (
         <ModalComponentStyle
             open={show}
@@ -21,6 +21,7 @@ const ModalComponent = ({ show, handleClose, size = 'xs', children, fullWidth = 
             fullWidth={fullWidth}
             TransitionComponent={Transition}
             className={className}
+            sx={sx}
         >
             {children}
         </ModalComponentStyle>

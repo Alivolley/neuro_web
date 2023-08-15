@@ -33,7 +33,9 @@ const HeaderSearch = () => {
 
     return (
         <div
-            className={`flex flex-col items-center justify-center gap-6 ${locale === 'fa' ? 'font-picoopicRegular' : ''}`}
+            className={`flex flex-col items-center justify-center gap-6 bg-buttonBgColor py-14 ${
+                locale === 'fa' ? 'font-picoopicRegular' : ''
+            }`}
             {...(locale === 'fa' && {
                 style: { direction: 'rtl' }
             })}
