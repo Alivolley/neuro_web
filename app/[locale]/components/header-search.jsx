@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
@@ -62,8 +63,9 @@ const HeaderSearch = () => {
                     text={t('Search')}
                     type='submit'
                     icon={searchButtonIcon}
-                    className={`text-buttonTextColor border-[1px] border-solid bg-buttonBgColor border-borderColor p-[10px] rounded-[2px]
-                     w-[150px] sm:w-[200px] h-[55px] mx-auto sm:text-2xl font-avgardn  ${locale === 'fa' ? 'font-picoopicRegular' : ''}`}
+                    className={`text-buttonTextColor border-[1px] border-solid bg-buttonBgColor border-borderColor p-[10px] rounded-[2px] w-[150px] sm:w-[200px] h-[55px] mx-auto sm:text-2xl font-avgardn  ${
+                        locale === 'fa' ? 'font-picoopicRegular' : ''
+                    }`}
                 />
             </form>
             <div
