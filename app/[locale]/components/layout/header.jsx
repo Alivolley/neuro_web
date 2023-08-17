@@ -77,8 +77,8 @@ const Header = ({ currentLocale }) => {
                     voluptatum porro vel, magni at sapiente, cumque iure. Recusandae iusto adipisci ab ducimus.
                 </p>
             </Drawer>
-            <ModalComponent show={searchModalStatus} handleClose={closeSearchModalHandler} fullWidth={true} size='md'>
-                <HeaderSearch />
+            <ModalComponent show={searchModalStatus} handleClose={closeSearchModalHandler} fullWidth={true} size='md' fullScreen={true}>
+                <HeaderSearch closeSearchModalHandler={closeSearchModalHandler} />
             </ModalComponent>
         </header>
     );
