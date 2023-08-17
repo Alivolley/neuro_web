@@ -19,6 +19,14 @@
         "experience": " , experience",
         "ui_ux design": "ui.ux design",
         "describeUiUx": "Boost your brands online presence with captivating UI/UX design that engages and delights youraudience. Our skilled designers create stunning, user-friendly interfaces for seamlessnavigation and lasting impact. Invest in exceptional UI/UX design to maximize engagement,conversions, and establish your brand as a digital leader.",
-        "more info": "MORE INFO"
+        "more info": "MORE INFO",
+        "Development of": "Development of",
+        "client side applications": "client side applications",
+        "Frontend developer": "Frontend developer",
+        "describeFront": "Elevate your website's user experience and interface with the expertise of a frontend developer. Our talented developers craft visually appealing, interactive, and user-friendly interfaces that captivate and engage your audience. By focusing on seamless navigation and impeccable design, our frontend developers ensure that your online presence stands out, leaving a lasting impact on visitors.",
+        "Specialist in": "Specialist in",
+        "server side development": "server  side development",
+        "backend developer": "backend developer",
+        "describeBack": "Empower your website or application with the expertise of a backend developer. Our skilled developers specialize in building robust, secure, and scalable systems that power your digital presence. With their in-depth knowledge of programming languages and frameworks, they solve complex challenges and optimize performance to ensure seamless operations behind the scenes."
     }
 }

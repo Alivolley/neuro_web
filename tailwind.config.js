@@ -30,7 +30,7 @@ module.exports = {
                 titreZebr2: 'titre_Zebr2'
             },
             boxShadow: {
-                customButtonShadow: '0px 4px 30px 0px #757A4F1A'
+                customShadow: '0px 4px 43px 0px #C6E8EA'
             }
         }
     },

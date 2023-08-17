@@ -8,7 +8,7 @@ import { ButtonTemplateStyle } from './button-template.style';
 import { CircularProgress } from '@mui/material';
 import { useParams } from 'next/navigation';
 
-const ButtonTemplate = ({ className, loading, icon, text, disabled, type = 'button', onClick }) => {
+const ButtonTemplate = ({ className, loading = false, icon, text, disabled, type = 'button', onClick }) => {
     const { locale } = useParams();
     return (
         <ButtonTemplateStyle className={className} disabled={loading || disabled} type={type} onClick={onClick} locale={locale}>
@@ -18,7 +18,7 @@ const ButtonTemplate = ({ className, loading, icon, text, disabled, type = 'butt
                 </p>
             )}
             {text && <p>{text}</p>}
-            {icon && <Image src={icon} alt='loading' />}
+            {icon && <Image src={icon} alt='icon' />}
         </ButtonTemplateStyle>
     );
 };
