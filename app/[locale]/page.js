@@ -21,9 +21,9 @@ import 'swiper/css/pagination';
 import { Grid } from '@mui/material';
 
 //Components
-import Button from './components/form-group/button';
 import HeaderTitle from './components/template/header-title';
 import BorderedText from './components/template/bordered-text';
+import ButtonTemplate from './components/form-group/button-template';
 
 export default function Home() {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -61,18 +61,12 @@ export default function Home() {
                                         <HeaderTitle>{t('ui_ux design')}</HeaderTitle>
                                     </div>
 
-                                    <div className='mt-[120px]'>
+                                    <div className='mt-[120px] mb-[90px]'>
                                         <BorderedText>{t('describeUiUx')}</BorderedText>
                                     </div>
 
                                     <Link href={'/'}>
-                                        <Button
-                                            text={t('more info')}
-                                            icon={locale === 'fa' ? arrowIconReverse : arrowIcon}
-                                            className={`text-buttonTextColor border-[1px] border-solid bg-buttonBgColor border-borderColor py-[10px] px-[20px] rounded-[2px] font-aubrey my-[90px] mb-[5000px] shadow-customButtonShadow ${
-                                                locale === 'fa' ? 'font-picoopicRegular' : ''
-                                            }`}
-                                        />
+                                        <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                                     </Link>
                                 </div>
                             </Grid>

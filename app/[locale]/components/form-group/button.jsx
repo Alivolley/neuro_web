@@ -1,7 +1,10 @@
 'use client';
-
 import Image from 'next/image';
+
+//Assets
 import { ButtonStyle } from './button.style';
+
+//Mui
 import { CircularProgress } from '@mui/material';
 
 const Button = ({ className, loading, icon, text, disabled, type = 'button', onClick }) => {
