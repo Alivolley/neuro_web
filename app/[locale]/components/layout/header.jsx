@@ -52,7 +52,9 @@ const Header = ({ currentLocale }) => {
                         currentLocale === 'fa' ? 'font-picoopicRegular' : ''
                     }`}
                 >
-                    <li className='hidden customMd:list-item'>{t('Product')}</li>
+                    <li className='hidden customMd:list-item'>
+                        <Link href={'/products'}>{t('Product')}</Link>
+                    </li>
                     <li className='hidden customMd:list-item'>{t('Our team')}</li>
                     <li className='hidden customMd:list-item'>{t('Contact us')}</li>
                     <li className='hidden customMd:list-item'>{t('Articles')}</li>

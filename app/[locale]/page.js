@@ -10,7 +10,6 @@ import Image from 'next/image';
 import arrowIcon from './../assets/icons/arrowIcon.svg';
 import arrowIconReverse from './../assets/icons/arrowIconReverse.svg';
 import { HomeStyle } from './home.style';
-import brush from './../assets/images/brush.png';
 import uiuxSkeleton from './../assets/images/uiuxSkeleton.png';
 import frontEndSkeleton from './../assets/images/frontEndSkeleton.png';
 import backEndSkeleton from './../assets/images/backEndSkeleton.png';
@@ -88,7 +87,6 @@ export default function Home() {
                             <div className='flex items-center gap-12'>
                                 <div className='flex-grow flex flex-col items-end'>
                                     <Image src={uiuxSkeleton} alt='uiuxPicture' onClick={() => changeSlide(2)} />
-                                    <Image src={brush} alt='uiuxPicture' className='mt-[-60px] mr-[50px]' />
                                 </div>
                                 <SlidersItems activeSlide={activeSlide} changeSlide={changeSlide} locale={locale} />
                             </div>

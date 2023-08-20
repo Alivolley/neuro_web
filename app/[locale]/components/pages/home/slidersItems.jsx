@@ -20,7 +20,7 @@ const SlidersItems = ({ activeSlide, changeSlide, locale }) => {
                     ></div>
                 </div>
                 <div className='relative item_wrapper'>
-                    <Image src={frontItem} alt='frontend' className='cursor-pointer' onClick={() => changeSlide(1)} />
+                    <Image src={backItem} alt='frontend' className='cursor-pointer' onClick={() => changeSlide(1)} />
                     <div
                         className={`absolute left-[-37px] top-[30px] w-[14px] h-[14px] bg-[#80949C] rounded-full transition-all duration-200 ${
                             activeSlide === 1 ? 'shadow-customShadow bg-[#C6E8EA]' : ''
@@ -28,7 +28,7 @@ const SlidersItems = ({ activeSlide, changeSlide, locale }) => {
                     ></div>
                 </div>
                 <div className='relative item_wrapper'>
-                    <Image src={backItem} alt='uiux' className='cursor-pointer' onClick={() => changeSlide(2)} />
+                    <Image src={frontItem} alt='uiux' className='cursor-pointer' onClick={() => changeSlide(2)} />
                     <div
                         className={`absolute left-[-37px] top-[30px] w-[14px] h-[14px] bg-[#80949C] rounded-full transition-all duration-200 ${
                             activeSlide === 2 ? 'shadow-customShadow bg-[#C6E8EA]' : ''
