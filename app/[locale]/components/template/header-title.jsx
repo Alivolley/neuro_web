@@ -4,7 +4,7 @@ const HeaderTitle = ({ children }) => {
     const { locale } = useParams();
 
     return (
-        <div>
+        <div className='relative'>
             <p
                 className={`uppercase text-goldColor ${
                     locale === 'fa'

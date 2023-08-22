@@ -28,5 +28,11 @@
         "server side development": "server  side development",
         "backend developer": "backend developer",
         "describeBack": "Empower your website or application with the expertise of a backend developer. Our skilled developers specialize in building robust, secure, and scalable systems that power your digital presence. With their in-depth knowledge of programming languages and frameworks, they solve complex challenges and optimize performance to ensure seamless operations behind the scenes."
+    },
+    "products": {
+        "Enhance your brands": "Enhance your brands presence with our collection",
+        "Our products": "Our products",
+        "Our product description": "Discover the transformative power of our team's portfolio, showcasing our expertise in delivering outstanding projects across diverse industries. With a keen attention to detail and unwavering commitment to client satisfaction, we bring innovation and problem-solving to the forefront of every endeavor. Explore our portfolio to witness captivating digital experiences that leave a lasting impact.",
+        "all products": "ALL PRODUCTS"
     }
 }
