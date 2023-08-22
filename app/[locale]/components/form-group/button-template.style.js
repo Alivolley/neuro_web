@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { IconButton } from '@mui/material';
+import { Button } from '@mui/material';
 
-export const ButtonTemplateStyle = styled(IconButton)(props => ({
+export const ButtonTemplateStyle = styled(Button)(props => ({
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
@@ -11,11 +11,13 @@ export const ButtonTemplateStyle = styled(IconButton)(props => ({
     color: props.theme.colors.buttonTextColor,
     border: '1px solid',
     borderColor: props.theme.colors.borderColor,
-    backgroundColor: props.theme.colors.buttonBgColor,
+    backgroundColor: `${props.theme.colors.buttonBgColor} !important`,
     boxShadow: '0px 4px 30px 0px #757A4F1A',
     fontFamily: props.locale === 'fa' ? 'picoopic_Regular' : 'aubrey',
-    padding: '8px 10px',
+    // padding: '8px 10px',
+    textTransform: 'none',
     fontSize: '13px',
+    height: 'fit-content',
 
     '@media (min-width: 900px)': {
         padding: '10px 20px',
