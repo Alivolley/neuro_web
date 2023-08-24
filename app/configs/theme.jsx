@@ -1,5 +1,19 @@
-export const getDesignTokens = mode => ({
+export const getDesignTokens = (mode, locale) => ({
     mode: mode,
+
+    components: {
+        MuiMenu: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: '#131514',
+                    ...(locale === 'fa' && {
+                        direction: 'rtl'
+                    })
+                }
+            }
+        }
+    },
+
     colors: {
         textColor: '#A0ACB1',
         menuItemColor: '#B0CEB8',

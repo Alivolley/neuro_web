@@ -1,6 +1,6 @@
 'use client';
 import { Provider } from 'react-redux';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
 //Assets
 import store from '@/app/store/store';
@@ -14,7 +14,9 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import Header from './header';
 
 const AppLayout = ({ children, currentLocale }) => {
-    const themeConfig = createTheme(getDesignTokens('light'));
+    const { locale } = useParams();
+
+    const themeConfig = createTheme(getDesignTokens('light', locale));
     const pathname = usePathname();
     const notShowBox = pathname.endsWith('/allProducts');
 

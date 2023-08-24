@@ -95,14 +95,31 @@ const AllProducts = () => {
                 <div className='mb-2'>
                     <AllProductsSelect size='small' locale={locale}>
                         <InputLabel sx={{ fontFamily: 'inherit' }}>{t('Time')}</InputLabel>
-                        <Select value={selectValue} label={t('Time')} onChange={e => setSelectValue(e.target.value)}>
-                            <MenuItem value={10} sx={{ color: '#B0CEB8', fontFamily: 'inherit' }}>
+                        <Select
+                            value={selectValue}
+                            label={t('Time')}
+                            onChange={e => setSelectValue(e.target.value)}
+                            className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
+                        >
+                            <MenuItem
+                                value={10}
+                                sx={{ color: '#B0CEB8' }}
+                                className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
+                            >
                                 {t('first tab')}
                             </MenuItem>
-                            <MenuItem value={20} sx={{ color: '#B0CEB8', fontFamily: 'inherit' }}>
+                            <MenuItem
+                                value={20}
+                                sx={{ color: '#B0CEB8' }}
+                                className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
+                            >
                                 {t('second tab')}
                             </MenuItem>
-                            <MenuItem value={30} sx={{ color: '#B0CEB8', fontFamily: 'inherit' }}>
+                            <MenuItem
+                                value={30}
+                                sx={{ color: '#B0CEB8' }}
+                                className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
+                            >
                                 {t('third tab')}
                             </MenuItem>
                         </Select>
