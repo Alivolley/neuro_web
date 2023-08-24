@@ -21,7 +21,8 @@ module.exports = {
                 borderColor: '#A4B28E',
                 buttonBgColor: '#131514',
                 titleColor: '#958375',
-                numberColor: '#CCAA60'
+                numberColor: '#CCAA60',
+                textBlue: '#587987'
             },
             fontFamily: {
                 avgardn: 'avgardn',

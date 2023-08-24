@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
 
 const ProductCard = ({ bigPic, firstSubPic, secondSubPic, thirdSubPic }) => {
     return (
@@ -29,6 +28,7 @@ const ProductCard = ({ bigPic, firstSubPic, secondSubPic, thirdSubPic }) => {
                     </Grid>
                 </Grid>
             </Grid>
+            <p className='text-textBlue font-aubrey text-center my-5 tracking-[1px]'>Say Hello To Peter</p>
         </div>
     );
 };
