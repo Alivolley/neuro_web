@@ -41,7 +41,7 @@ const PageSome = () => {
                             <BorderedText>{t('Our product description')}</BorderedText>
                         </div>
 
-                        <Link href={'/'}>
+                        <Link href={'/allProducts'}>
                             <ButtonTemplate text={t('all products')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                         </Link>
                     </div>
