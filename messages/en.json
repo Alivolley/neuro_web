@@ -34,5 +34,18 @@
         "Our products": "Our products",
         "Our product description": "Discover the transformative power of our team's portfolio, showcasing our expertise in delivering outstanding projects across diverse industries. With a keen attention to detail and unwavering commitment to client satisfaction, we bring innovation and problem-solving to the forefront of every endeavor. Explore our portfolio to witness captivating digital experiences that leave a lasting impact.",
         "all products": "ALL PRODUCTS"
+    },
+    "allProducts": {
+        "first title": "Say Hello To Peter",
+        "second title": "Las Vegas",
+        "third title": "New York",
+        "first describe": "There are of Lorem Ipsum available, but the majority have su alteration in some form,",
+        "all products": "all products",
+        "templates": "templates",
+        "work": "work",
+        "Time": "TIME",
+        "first tab": "ten days",
+        "second tab": "twenty days",
+        "third tab": "thirty days"
     }
 }
