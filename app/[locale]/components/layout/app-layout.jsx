@@ -18,7 +18,7 @@ const AppLayout = ({ children, currentLocale }) => {
 
     const themeConfig = createTheme(getDesignTokens('light', locale));
     const pathname = usePathname();
-    const notShowBox = pathname.endsWith('/allProducts');
+    const notShowBox = pathname.endsWith('/allProducts') || /\/product-detail\/(.+)/.test(pathname);
 
     return (
         <Provider store={store}>

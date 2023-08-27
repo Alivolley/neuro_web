@@ -47,5 +47,12 @@
         "first tab": "ده روز",
         "second tab": "بیست روز",
         "third tab": "سی روز"
+    },
+    "productDetail": {
+        "At the request": "به درخواست کارفرما (خانوم / آقا)",
+        "Call us on": "با ما تماس بگیرید",
+        "Email us": "به ما ایمیل بزنید",
+        "SIMILAR PROJECTS": "پروژه های مشابه",
+        "See more": "مشاهده بیشتر"
     }
 }

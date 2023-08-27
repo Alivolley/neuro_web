@@ -47,5 +47,12 @@
         "first tab": "ten days",
         "second tab": "twenty days",
         "third tab": "thirty days"
+    },
+    "productDetail": {
+        "At the request": "At the request of the employer (Mr. / Ms.)",
+        "Call us on": "Call us on",
+        "Email us": "Email us",
+        "SIMILAR PROJECTS": "SIMILAR PROJECTS",
+        "See more": "See more"
     }
 }
