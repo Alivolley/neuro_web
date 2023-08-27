@@ -56,7 +56,9 @@ const Header = ({ currentLocale }) => {
                         <Link href={'/products'}>{t('Product')}</Link>
                     </li>
                     <li className='hidden customMd:list-item'>{t('Our team')}</li>
-                    <li className='hidden customMd:list-item'>{t('Contact us')}</li>
+                    <li className='hidden customMd:list-item'>
+                        <Link href={'/contactUs'}>{t('Contact us')}</Link>
+                    </li>
                     <li className='hidden customMd:list-item'>{t('Articles')}</li>
                     <li>
                         <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'}>

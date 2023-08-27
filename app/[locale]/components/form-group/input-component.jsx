@@ -7,12 +7,12 @@ const InputComponent = ({ type = 'text', detail, placeholder, disabled, error, c
         <InputComponentWrapper showArrows={showArrows}>
             <input
                 type={type}
-                className={`${error ? 'border-red-600' : ''} ${className}`}
+                className={`${className} ${error ? '!border-red-400' : ''}`}
                 {...detail}
                 placeholder={placeholder}
                 disabled={disabled}
             />
-            {error && <p className='text-red-500 text-[12px]'>{error.message}</p>}
+            {error && <p className='text-red-400 text-[12px]'>{error.message}</p>}
         </InputComponentWrapper>
     );
 };

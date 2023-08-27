@@ -54,5 +54,15 @@
         "Email us": "به ما ایمیل بزنید",
         "SIMILAR PROJECTS": "پروژه های مشابه",
         "See more": "مشاهده بیشتر"
+    },
+    "contactUs": {
+        "Contact us": "ارتباط با ما",
+        "username": "نام شما",
+        "phone number": "شماره تماس",
+        "email": "ایمیل شما",
+        "service": "سرویس مورد نظر",
+        "message": "پیغام شما ...",
+        "send your message": "ارسال پیغام",
+        "this filed is required": "این فیلد اجباری است"
     }
 }

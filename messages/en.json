@@ -54,5 +54,15 @@
         "Email us": "Email us",
         "SIMILAR PROJECTS": "SIMILAR PROJECTS",
         "See more": "See more"
+    },
+    "contactUs": {
+        "Contact us": "Contact us",
+        "username": "YOUR NAME HERE",
+        "phone number": "YOUR PHONE NUMBER",
+        "email": "YOUR EMAIL HERE",
+        "service": "WHAT SERVICE YOU WANT",
+        "message": "YOUR MESSAGE ...",
+        "send your message": "Send your message",
+        "this filed is required": "This filed is required"
     }
 }
