@@ -63,6 +63,9 @@
         "service": "WHAT SERVICE YOU WANT",
         "message": "YOUR MESSAGE ...",
         "send your message": "Send your message",
-        "this filed is required": "This filed is required"
+        "this filed is required": "This filed is required",
+        "Call us on": "Call us on",
+        "Email us": "Email us",
+        "Other ways": "Other ways of communication"
     }
 }

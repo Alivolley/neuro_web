@@ -63,6 +63,9 @@
         "service": "سرویس مورد نظر",
         "message": "پیغام شما ...",
         "send your message": "ارسال پیغام",
-        "this filed is required": "این فیلد اجباری است"
+        "this filed is required": "این فیلد اجباری است",
+        "Call us on": "با ما تماس بگیرید",
+        "Email us": "به ما ایمیل بزنید",
+        "Other ways": "دیگر راه های ارتباطی با ما"
     }
 }
