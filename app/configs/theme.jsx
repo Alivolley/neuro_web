@@ -1,18 +1,7 @@
 const getDesignTokens = (mode, locale) => ({
-   mode,
-
-   components: {
-      MuiMenu: {
-         styleOverrides: {
-            paper: {
-               backgroundColor: '#131514',
-               ...(locale === 'fa' && {
-                  direction: 'rtl',
-               }),
-            },
-         },
-      },
-   },
+   ...(locale === 'fa' && {
+      direction: 'rtl',
+   }),
 
    colors: {
       textColor: '#A0ACB1',
@@ -28,7 +17,10 @@ const getDesignTokens = (mode, locale) => ({
       disableTextColor: '#676A61',
       textBlue: '#587987',
    },
+
    palette: {
+      mode,
+
       textColor: {
          main: '#A0ACB1',
       },
@@ -64,6 +56,16 @@ const getDesignTokens = (mode, locale) => ({
       },
       textBlue: {
          main: '#587987',
+      },
+   },
+
+   components: {
+      MuiMenu: {
+         styleOverrides: {
+            paper: {
+               backgroundColor: '#131514',
+            },
+         },
       },
    },
 });

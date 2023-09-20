@@ -2,17 +2,18 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 // MUI
 import { Grid, InputLabel, MenuItem, Select, Tab } from '@mui/material';
 
 // Assets
-import { useParams } from 'next/navigation';
 import { AllProductsSelect, AllProductsTabs } from './allProducts.style';
 import samplePicture from '../../assets/images/sample_picture.png';
 
 // Components
 import ProductCard from '../components/template/product-card';
+import RtlProvider from '../components/layout/rtlProvider/rtlProvider';
 
 function AllProducts() {
    const [tabsValue, setTabsValue] = useState(0);
@@ -31,7 +32,7 @@ function AllProducts() {
                         <p className="text-titleColor">{t('first title')}</p>
                         <p className="mt-6 text-[14px] uppercase leading-8 text-textColor">{t('first describe')}</p>
                         <div
-                           className={`absolute bottom-0 w-[90px] bg-[#3A4553] customLg:inset-y-0 customLg:w-[1px]${
+                           className={`absolute bottom-0 w-[90px] bg-[#3A4553] customLg:inset-y-0 customLg:w-[1px] ${
                               locale === 'fa'
                                  ? 'right-0 customLg:left-[-50px] customLg:right-auto'
                                  : 'left-0 customLg:left-auto customLg:right-[-50px]'
@@ -50,7 +51,7 @@ function AllProducts() {
                         <p className="mt-6 text-[14px] uppercase leading-8 text-textColor">contact@diacara.com</p>
                         <p className="text-textColor">+0 123 654 78910 </p>
                         <div
-                           className={`absolute bottom-0 w-[90px] bg-[#3A4553] customSm:inset-y-0 customSm:w-[1px]${
+                           className={`absolute bottom-0 w-[90px] bg-[#3A4553] customSm:inset-y-0 customSm:w-[1px] ${
                               locale === 'fa'
                                  ? 'right-0 customSm:left-0 customSm:right-auto customLg:left-[-50px]'
                                  : 'left-0 customSm:left-auto customSm:right-0 customLg:right-[-50px]'
@@ -93,37 +94,39 @@ function AllProducts() {
                </AllProductsTabs>
             </div>
             <div className="mb-2">
-               <AllProductsSelect size="small" locale={locale}>
-                  <InputLabel sx={{ fontFamily: 'inherit' }}>{t('Time')}</InputLabel>
-                  <Select
-                     value={selectValue}
-                     label={t('Time')}
-                     onChange={e => setSelectValue(e.target.value)}
-                     className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
-                  >
-                     <MenuItem
-                        value={10}
-                        sx={{ color: '#B0CEB8' }}
-                        className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
+               <RtlProvider>
+                  <AllProductsSelect size="small" locale={locale}>
+                     <InputLabel sx={{ fontFamily: 'inherit' }}>{t('Time')}</InputLabel>
+                     <Select
+                        value={selectValue}
+                        label={t('Time')}
+                        onChange={e => setSelectValue(e.target.value)}
+                        className={`${locale === 'fa' ? '!font-picoopicRegular' : '!font-aubrey'}`}
                      >
-                        {t('first tab')}
-                     </MenuItem>
-                     <MenuItem
-                        value={20}
-                        sx={{ color: '#B0CEB8' }}
-                        className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
-                     >
-                        {t('second tab')}
-                     </MenuItem>
-                     <MenuItem
-                        value={30}
-                        sx={{ color: '#B0CEB8' }}
-                        className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}
-                     >
-                        {t('third tab')}
-                     </MenuItem>
-                  </Select>
-               </AllProductsSelect>
+                        <MenuItem
+                           value={10}
+                           sx={{ color: '#B0CEB8' }}
+                           className={`${locale === 'fa' ? '!font-picoopicRegular' : '!font-aubrey !tracking-[2px]'}`}
+                        >
+                           {t('first tab')}
+                        </MenuItem>
+                        <MenuItem
+                           value={20}
+                           sx={{ color: '#B0CEB8' }}
+                           className={`${locale === 'fa' ? '!font-picoopicRegular' : '!font-aubrey !tracking-[2px]'}`}
+                        >
+                           {t('second tab')}
+                        </MenuItem>
+                        <MenuItem
+                           value={30}
+                           sx={{ color: '#B0CEB8' }}
+                           className={`${locale === 'fa' ? '!font-picoopicRegular' : '!font-aubrey !tracking-[2px]'}`}
+                        >
+                           {t('third tab')}
+                        </MenuItem>
+                     </Select>
+                  </AllProductsSelect>
+               </RtlProvider>
             </div>
          </div>
          <div className="mt-6">

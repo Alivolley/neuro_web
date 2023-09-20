@@ -24,7 +24,7 @@ function AppLayout({ children, currentLocale }) {
    return (
       <Provider store={store}>
          <ThemeProvider theme={themeConfig}>
-            <AppLayoutStyle currentLocale={currentLocale}>
+            <AppLayoutStyle currentLocale={currentLocale} dir={currentLocale === 'fa' ? 'rtl' : 'ltr'}>
                <div id="left_line" />
                {!notShowBox && <div id="left_box" />}
                <Header currentLocale={currentLocale} />

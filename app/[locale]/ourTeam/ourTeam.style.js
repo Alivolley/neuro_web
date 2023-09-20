@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 const OurTeamCard = styled.div(() => ({
+   paddingBottom: '100px',
+
    '& #picsWidth': {
       /* width */
       '&::-webkit-scrollbar': {

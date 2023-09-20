@@ -12,11 +12,7 @@ function BorderedText({ children }) {
          >
             {children}
          </p>
-         <div
-            className={`absolute inset-y-0 w-[4px] rounded-[1px] bg-darkGold${
-               locale === 'fa' ? 'right-[0px] customMd:right-[0]' : 'left-[0px] customMd:left-[0]'
-            }`}
-         />
+         <div className={`absolute inset-y-0 w-[4px] rounded-[1px] bg-darkGold ${locale === 'fa' ? 'right-0' : 'left-0'}`} />
       </div>
    );
 }

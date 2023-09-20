@@ -19,7 +19,6 @@ export const AllProductsSelect = styled(FormControl)(props => ({
       }),
       color: `${props.theme.colors.menuItemColor} !important`,
       borderColor: `${props.theme.colors.menuItemColor} !important`,
-      letterSpacing: '2px',
 
       '@media (max-width: 600px)': {
          fontSize: '9px !important',

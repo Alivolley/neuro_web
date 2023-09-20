@@ -32,4 +32,26 @@
       font-family: 'titre_Zebr2';
       src: url('/fonts/persians/TitrZebr2.ttf') format('truetype');
    }
+
+   /* width */
+   ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+   }
+
+   /* Track */
+   ::-webkit-scrollbar-track {
+      background-color: #131514;
+   }
+
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+      background-color: #797f4a42;
+      border-radius: 20px;
+   }
+
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+      background-color: #797f4a7e;
+   }
 }

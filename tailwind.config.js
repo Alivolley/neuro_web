@@ -4,9 +4,10 @@ module.exports = {
    theme: {
       extend: {
          screens: {
+            customSm: '600px',
             customMd: '900px',
             customLg: '1200px',
-            customSm: '600px',
+            customXl: '1400px',
          },
          backgroundImage: {
             'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

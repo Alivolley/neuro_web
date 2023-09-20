@@ -4,10 +4,6 @@ import styled from '@emotion/styled';
 import appBg from '../../../assets/images/appBackground.png';
 
 const AppLayoutStyle = styled.div(({ currentLocale, theme }) => ({
-   ...(currentLocale === 'fa' && {
-      direction: 'rtl',
-   }),
-
    position: 'relative',
    backgroundImage: `url(${appBg.src})`,
    backgroundPosition: 'bottom center',
