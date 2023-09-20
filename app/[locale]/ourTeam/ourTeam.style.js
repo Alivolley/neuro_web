@@ -1,15 +1,28 @@
 import styled from '@emotion/styled';
 
 const OurTeamCard = styled.div(() => ({
-   display: 'flex',
+   '& #picsWidth': {
+      /* width */
+      '&::-webkit-scrollbar': {
+         width: '5px',
+         height: '5px',
+      },
 
-   '& .leftSide': {
-      //
-   },
+      /* Track */
+      '&::-webkit-scrollbar-track': {
+         backgroundColor: 'transparent',
+      },
 
-   '& .rightSide': {
-      width: '100%',
-      height: '100%',
+      /* Handle */
+      '&::-webkit-scrollbar-thumb': {
+         backgroundColor: '#797f4a42',
+         borderRadius: '10px',
+      },
+
+      /* Handle on hover */
+      '&::-webkit-scrollbar-thumb:hover': {
+         backgroundColor: '#797f4a7e',
+      },
    },
 }));
 

@@ -3,15 +3,16 @@
 
 'use client';
 
+import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 // Assets
-import { useState } from 'react';
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
 import jasminPicture from '../../assets/images/jasminPicture.png';
+import OurTeamCard from './ourTeam.style';
 
 // components
 import HeaderTitle from '../components/template/header-title';
@@ -29,7 +30,7 @@ function OurTeam() {
    const { locale } = useParams();
    const t = useTranslations('ourTeam');
    return (
-      <div>
+      <OurTeamCard>
          <div className="mt-[20px] sm:mt-[110px]">
             <div
                className={`flex flex-wrap text-textColor sm:gap-2 ${
@@ -43,15 +44,21 @@ function OurTeam() {
             <HeaderTitle>{t('Our team')}</HeaderTitle>
          </div>
 
-         <div className="overflow-auto customMd:ms-[220px] ">
-            <div className={`mt-[120px] flex gap-8 customSm:mt-[95px] ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[3px]'}`}>
-               <div className="relative flex h-fit items-center justify-center bg-[#101211]" onClick={() => changeSlideHandler(1)}>
+         <div
+            className="mt-[120px] h-[270px] overflow-auto customSm:mt-[95px] customSm:h-[320px] customMd:ms-60 customMd:h-[440px] customLg:ms-96"
+            id="picsWidth"
+         >
+            <div className={`flex gap-8 ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[3px]'}`}>
+               <div
+                  className="flex h-60 items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
+                  onClick={() => changeSlideHandler(1)}
+               >
                   <div
-                     className={
+                     className={`flex flex-col justify-center transition-all duration-300 ${
                         activeSlide === 1
-                           ? 'w-[150px] px-4 py-6 transition-all duration-300 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]'
-                           : 'absolute z-[-1] transition-all duration-300'
-                     }
+                           ? `visible h-full w-[150px] px-4 py-6 opacity-100 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]`
+                           : 'invisible h-0 w-0 scale-0 opacity-0'
+                     }`}
                   >
                      <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
                      <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
@@ -60,18 +67,18 @@ function OurTeam() {
                      </p>
                      <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                   </div>
-                  <div className="w-[150px] customSm:w-[220px] customMd:w-[250px]">
+                  <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
                   </div>
                </div>
 
-               <div className="relative bottom-16 flex h-fit items-center justify-center bg-[#101211]" onClick={() => changeSlideHandler(2)}>
+               <div className="flex h-60 items-center justify-center bg-[#101211] customSm:h-72 customMd:h-80" onClick={() => changeSlideHandler(2)}>
                   <div
-                     className={
+                     className={`flex flex-col justify-center transition-all duration-300 ${
                         activeSlide === 2
-                           ? 'w-[150px] px-4 py-6 transition-all duration-300 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]'
-                           : 'absolute z-[-1] transition-all duration-300'
-                     }
+                           ? `visible h-full w-[150px] px-4 py-6 opacity-100 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]`
+                           : 'invisible h-0 w-0 scale-0 opacity-0'
+                     }`}
                   >
                      <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
                      <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
@@ -80,18 +87,21 @@ function OurTeam() {
                      </p>
                      <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                   </div>
-                  <div className="w-[150px] customSm:w-[220px] customMd:w-[250px]">
+                  <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
                   </div>
                </div>
 
-               <div className="relative flex h-fit items-center justify-center bg-[#101211]" onClick={() => changeSlideHandler(3)}>
+               <div
+                  className="flex h-60 items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
+                  onClick={() => changeSlideHandler(3)}
+               >
                   <div
-                     className={
+                     className={`flex flex-col justify-center transition-all duration-300 ${
                         activeSlide === 3
-                           ? 'w-[150px] px-4 py-6 transition-all duration-300 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]'
-                           : 'absolute z-[-1] transition-all duration-300'
-                     }
+                           ? `visible h-full w-[150px] px-4 py-6 opacity-100 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]`
+                           : 'invisible h-0 w-0 scale-0 opacity-0'
+                     }`}
                   >
                      <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
                      <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
@@ -100,7 +110,7 @@ function OurTeam() {
                      </p>
                      <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                   </div>
-                  <div className="w-[150px] customSm:w-[220px] customMd:w-[250px]">
+                  <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
                   </div>
                </div>
@@ -137,7 +147,7 @@ function OurTeam() {
             atque sapiente quam animi neque ipsam mollitia, perferendis quod adipisci optio quas doloribus et fugit modi ullam. Mollitia laborum
             adipisci minima, assumenda voluptate esse earum ad sed reiciendis, obcaecati facilis porro commodi, reprehenderit temporibus! Aut.
          </p>
-      </div>
+      </OurTeamCard>
    );
 }
 

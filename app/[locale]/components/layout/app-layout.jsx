@@ -3,13 +3,13 @@
 import { Provider } from 'react-redux';
 import { useParams, usePathname } from 'next/navigation';
 
-// Assets
+// MUI
 import { ThemeProvider, createTheme } from '@mui/material';
+
+// Assets
 import store from '../../../store/store';
 import getDesignTokens from '../../../configs/theme';
 import AppLayoutStyle from './app-layout.style';
-
-// MUI
 
 // Components
 import Header from './header';
