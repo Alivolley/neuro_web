@@ -1,24 +1,24 @@
 import { useParams } from 'next/navigation';
 
-const BorderedText = ({ children }) => {
-    const { locale } = useParams();
+function BorderedText({ children }) {
+   const { locale } = useParams();
 
-    return (
-        <div className='relative'>
-            <p
-                className={`text-textColor text-[10px] sm:text-[14px] mx-1 px-3 ${
-                    locale === 'fa' ? 'font-picoopicRegular leading-9' : 'leading-7 font-aubrey tracking-[3px]'
-                }`}
-            >
-                {children}
-            </p>
-            <div
-                className={`absolute w-[4px] top-0 bottom-0 bg-darkGold rounded-[1px] ${
-                    locale === 'fa' ? 'right-[0px] customMd:right-[0]' : 'left-[0px] customMd:left-[0]'
-                }`}
-            ></div>
-        </div>
-    );
-};
+   return (
+      <div className="relative">
+         <p
+            className={`mx-1 px-3 text-[10px] text-textColor sm:text-[14px] ${
+               locale === 'fa' ? 'font-picoopicRegular leading-9' : 'font-aubrey leading-7 tracking-[3px]'
+            }`}
+         >
+            {children}
+         </p>
+         <div
+            className={`absolute inset-y-0 w-[4px] rounded-[1px] bg-darkGold${
+               locale === 'fa' ? 'right-[0px] customMd:right-[0]' : 'left-[0px] customMd:left-[0]'
+            }`}
+         />
+      </div>
+   );
+}
 
 export default BorderedText;

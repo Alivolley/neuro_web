@@ -2,27 +2,27 @@ import { useState } from 'react';
 import Cookies from 'js-cookie';
 
 export default function useCookie() {
-    const [value, setValue] = useState();
+   const [value, setValue] = useState();
 
-    const addCookie = (name, defaultValue, options) => {
-        const cookie = Cookies.get(name);
-        if (cookie) {
-            setValue(cookie);
-        } else {
-            Cookies.set(name, defaultValue, options);
-            setValue(defaultValue);
-        }
-    };
+   const addCookie = (name, defaultValue, options) => {
+      const cookie = Cookies.get(name);
+      if (cookie) {
+         setValue(cookie);
+      } else {
+         Cookies.set(name, defaultValue, options);
+         setValue(defaultValue);
+      }
+   };
 
-    const updateCookie = (name, newValue, options) => {
-        Cookies.set(name, newValue, options);
-        setValue(newValue);
-    };
+   const updateCookie = (name, newValue, options) => {
+      Cookies.set(name, newValue, options);
+      setValue(newValue);
+   };
 
-    const deleteCookie = name => {
-        Cookies.remove(name);
-        setValue(null);
-    };
+   const deleteCookie = name => {
+      Cookies.remove(name);
+      setValue(null);
+   };
 
-    return { value, addCookie, updateCookie, deleteCookie };
+   return { value, addCookie, updateCookie, deleteCookie };
 }
