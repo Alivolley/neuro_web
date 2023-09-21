@@ -50,7 +50,7 @@ function OurTeam() {
          <div className="mt-[120px] h-[270px] overflow-auto customSm:h-[320px] customMd:mt-[30px] customMd:h-[440px]" id="picsWidth">
             <div className={`flex gap-8 customXl:justify-end ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[3px]'}`}>
                <div
-                  className="flex h-60 items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
+                  className="flex h-60 cursor-pointer items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
                   onClick={() => changeSlideHandler(1)}
                >
                   <div
@@ -66,7 +66,7 @@ function OurTeam() {
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                      </p>
                      <Link href="/teamMember-detail/2">
-                        <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                        <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                      </Link>
                   </div>
                   <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
@@ -82,7 +82,10 @@ function OurTeam() {
                   </div>
                </div>
 
-               <div className="flex h-60 items-center justify-center bg-[#101211] customSm:h-72 customMd:h-80" onClick={() => changeSlideHandler(2)}>
+               <div
+                  className="flex h-60 cursor-pointer items-center justify-center bg-[#101211] customSm:h-72 customMd:h-80"
+                  onClick={() => changeSlideHandler(2)}
+               >
                   <div
                      className={`flex flex-col justify-center transition-all duration-300 ${
                         activeSlide === 2
@@ -96,7 +99,7 @@ function OurTeam() {
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                      </p>
                      <Link href="/teamMember-detail/2">
-                        <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                        <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                      </Link>
                   </div>
                   <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
@@ -113,7 +116,7 @@ function OurTeam() {
                </div>
 
                <div
-                  className="flex h-60 items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
+                  className="flex h-60 cursor-pointer items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
                   onClick={() => changeSlideHandler(3)}
                >
                   <div
@@ -129,7 +132,7 @@ function OurTeam() {
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                      </p>
                      <Link href="/teamMember-detail/2">
-                        <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                        <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                      </Link>
                   </div>
                   <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
