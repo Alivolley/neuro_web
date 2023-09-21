@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next-intl/link';
 
 // Assets

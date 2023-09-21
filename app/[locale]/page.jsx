@@ -3,18 +3,14 @@
 'use client';
 
 import { useRef, useState } from 'react';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next-intl/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 // Swiper
-// eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
-// eslint-disable-next-line import/no-unresolved
 import { Autoplay } from 'swiper/modules';
-// eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // MUI
@@ -49,6 +45,7 @@ export default function Home() {
       <HomeStyle className="mt-[20px] sm:mt-[110px]">
          <Swiper
             loop
+            // eslint-disable-next-line tailwindcss/no-custom-classname
             className="mySwiper"
             onSwiper={swiper => setActiveSlide(swiper.realIndex)}
             modules={[Autoplay]}

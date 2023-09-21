@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next-intl/link';
 
 // Assets
@@ -66,7 +65,9 @@ function OurTeam() {
                      <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                      </p>
-                     <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                     <Link href="/teamMember-detail/2">
+                        <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                     </Link>
                   </div>
                   <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
@@ -86,7 +87,9 @@ function OurTeam() {
                      <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                      </p>
-                     <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                     <Link href="/teamMember-detail/2">
+                        <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                     </Link>
                   </div>
                   <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
@@ -109,7 +112,9 @@ function OurTeam() {
                      <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                      </p>
-                     <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                     <Link href="/teamMember-detail/2">
+                        <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                     </Link>
                   </div>
                   <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />

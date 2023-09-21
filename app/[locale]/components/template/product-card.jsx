@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next-intl/link';
 
 // MUI
@@ -8,7 +7,7 @@ import { Grid } from '@mui/material';
 function ProductCard({ bigPic, firstSubPic, secondSubPic, thirdSubPic, hrefId }) {
    return (
       <div className="mx-auto w-full max-w-[325px]">
-         <Link href={`product-detail/${hrefId}`}>
+         <Link href={`/product-detail/${hrefId}`}>
             <Grid container spacing={0.5}>
                <Grid
                   item

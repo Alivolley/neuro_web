@@ -2,7 +2,6 @@
 
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next-intl/link';
 import { useTranslations } from 'next-intl';
 

@@ -29,6 +29,7 @@ module.exports = {
       'react/jsx-key': 'warn',
       'react-hooks/exhaustive-deps': 'off',
       'no-plusplus': 'off',
+      'import/no-unresolved': 'off',
    },
 
    overrides: [

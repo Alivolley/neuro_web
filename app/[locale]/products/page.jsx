@@ -1,7 +1,6 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next-intl/link';
 import { useTranslations } from 'next-intl';
 

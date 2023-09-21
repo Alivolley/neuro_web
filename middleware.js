@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
