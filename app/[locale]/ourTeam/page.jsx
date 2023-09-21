@@ -69,8 +69,16 @@ function OurTeam() {
                         <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                      </Link>
                   </div>
-                  <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
+                  <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
+                     <div
+                        className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
+                           activeSlide !== 1 ? 'visible opacity-100' : 'invisible opacity-0'
+                        }`}
+                     >
+                        <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
+                        <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
+                     </div>
                   </div>
                </div>
 
@@ -91,8 +99,16 @@ function OurTeam() {
                         <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                      </Link>
                   </div>
-                  <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
+                  <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
+                     <div
+                        className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
+                           activeSlide !== 2 ? 'visible opacity-100' : 'invisible opacity-0'
+                        }`}
+                     >
+                        <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
+                        <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
+                     </div>
                   </div>
                </div>
 
@@ -116,8 +132,16 @@ function OurTeam() {
                         <ButtonTemplate text="See more" icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                      </Link>
                   </div>
-                  <div className="h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
+                  <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
                      <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
+                     <div
+                        className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
+                           activeSlide !== 3 ? 'visible opacity-100' : 'invisible opacity-0'
+                        }`}
+                     >
+                        <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
+                        <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
+                     </div>
                   </div>
                </div>
             </div>
