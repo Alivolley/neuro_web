@@ -17,14 +17,24 @@ function TeamMemberDetail() {
    const { slug, locale } = useParams();
 
    return (
-      <div className="relative mt-12 pb-12">
+      <div className="relative mt-3 pb-12 customMd:mt-12">
          <Grid container columnSpacing={8} rowSpacing={3}>
             <Grid item xs={12} md={2.5}>
-               <div className="aspect-[1/1.3] w-full">
-                  <Image src={jasminPic} className="h-full w-full" alt="profile" />
+               <div className="flex gap-4">
+                  <div className="aspect-[1/1] w-full max-w-[200px] customSm:aspect-[1/1.3] customMd:max-w-[300px]">
+                     <Image src={jasminPic} className="w-full" alt="profile" />
+                  </div>
+                  <div className="customMd:hidden">
+                     <h3 className="whitespace-nowrap font-pubg text-2xl tracking-[3px] text-titleColor">JASMIN DEHGHAN</h3>
+                     <p className="my-5 whitespace-nowrap font-aubrey text-sm tracking-[1.5px] text-menuItemColor">UI/UX Designer</p>
+                     <div className="hidden customSm:block">
+                        <InfoDetail />
+                     </div>
+                  </div>
                </div>
             </Grid>
-            <Grid item xs={12} md={9.5}>
+
+            <Grid item display={{ xs: 'none', md: 'flex' }} md={9.5}>
                <div className="text-white">
                   <h3 className="font-pubg text-[40px] tracking-[3px] text-titleColor">JASMIN DEHGHAN</h3>
                   <p className="my-5 font-aubrey tracking-[1.5px] text-menuItemColor">UI/UX Designer</p>
@@ -36,7 +46,7 @@ function TeamMemberDetail() {
                </div>
             </Grid>
 
-            <Grid item xs={12} md={2.5}>
+            <Grid item xs={12} display={{ sm: 'none', md: 'flex' }} md={2.5}>
                <div>
                   <InfoDetail />
                </div>

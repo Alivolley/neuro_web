@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import Link from 'next-intl/link';
 
@@ -8,6 +10,7 @@ import { Grid } from '@mui/material';
 import Image from 'next/image';
 import samplePicture from '../../../../../assets/images/sample_picture.png';
 import arrowIcon from '../../../../../assets/icons/arrowIcon.svg';
+import arrowIconReverse from '../../../../../assets/icons/arrowIconReverse.svg';
 
 // Components
 import ProductCard from '../../../template/product-card';
@@ -15,10 +18,13 @@ import ProductCard from '../../../template/product-card';
 function TabSection() {
    const [chosenTab, setChosenTab] = useState(1);
 
+   const t = useTranslations('teamMemberDetail');
+   const { locale } = useParams();
+
    return (
       <div>
-         <div>
-            <Grid container columnSpacing={4}>
+         <div className={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey'}`}>
+            <Grid container columnSpacing={{ xs: 0.5, sm: 5 }}>
                <Grid item xs={4}>
                   <button
                      type="button"
@@ -28,7 +34,7 @@ function TabSection() {
                      onClick={() => setChosenTab(1)}
                   >
                      <p className="font-avgardn text-2xl font-bold text-numberColor">13</p>
-                     <p className="font-aubrey text-xl tracking-[1px] text-titleColor">PROJECTS</p>
+                     <p className="text-xs tracking-[1px] text-titleColor customSm:text-xl">{t('projects')}</p>
                   </button>
                </Grid>
                <Grid item xs={4}>
@@ -40,7 +46,7 @@ function TabSection() {
                      onClick={() => setChosenTab(2)}
                   >
                      <p className="font-avgardn text-2xl font-bold text-numberColor">7</p>
-                     <p className="font-aubrey text-xl tracking-[1px] text-titleColor">SKILLS</p>
+                     <p className="text-xs tracking-[1px] text-titleColor customSm:text-xl">{t('skills')}</p>
                   </button>
                </Grid>
                <Grid item xs={4}>
@@ -52,32 +58,38 @@ function TabSection() {
                      onClick={() => setChosenTab(3)}
                   >
                      <p className="font-avgardn text-2xl font-bold text-numberColor">4</p>
-                     <p className="font-aubrey text-xl tracking-[1px] text-titleColor">SOFTWARES</p>
+                     <p className="text-xs tracking-[1px] text-titleColor customSm:text-xl">{t('softwares')}</p>
                   </button>
                </Grid>
             </Grid>
          </div>
-         <div className="mt-5 flex items-center justify-between rounded-sm bg-[#718b9544] px-4 py-3 font-avgardn tracking-[1px] text-menuItemColor">
-            <p>EXAMPLE OF WORKS</p>
-            <Link href="/" className="flex items-center gap-3">
-               <p className="text-sm">See more</p>
-               <Image src={arrowIcon} alt="arrow" />
+         <div
+            className={`mt-5 flex items-center justify-between rounded-sm bg-[#718b9544] px-4 py-3 tracking-[1px] text-menuItemColor ${
+               locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'
+            }`}
+         >
+            <p className="text-[10px] customSm:text-sm">{t('example of works')}</p>
+            <Link href="/" className="flex items-center gap-1 customSm:gap-3">
+               <p className="text-[10px] customSm:text-sm">{t('See more')}</p>
+               <Image src={locale === 'fa' ? arrowIconReverse : arrowIcon} alt="arrow" />
             </Link>
          </div>
 
-         <div className="mt-5">
-            <Grid container spacing={4}>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
+         {chosenTab === 1 && (
+            <div className="mt-5">
+               <Grid container spacing={4}>
+                  <Grid item xs={12} sm={6} lg={4}>
+                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
+                  </Grid>
+                  <Grid item xs={12} sm={6} lg={4}>
+                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
+                  </Grid>
+                  <Grid item xs={12} sm={6} lg={4}>
+                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
+                  </Grid>
                </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-            </Grid>
-         </div>
+            </div>
+         )}
       </div>
    );
 }

@@ -74,5 +74,17 @@
         "Our team description": "Let's discuss your project and how we can transform your vision into an engaging digital experience. Contact us today! ity, innovation and impact guide our work as we help move your business forward with exceptional websites that inspire.",
         "Contact us": "Contact us",
         "See more": "See more"
+    },
+    "teamMemberDetail": {
+        "Phone": "Phone",
+        "Telegram id": "Telegram id",
+        "Email": "Email",
+        "Address": "Address",
+        "Social media": "Social media",
+        "projects": "PROJECTS",
+        "skills": "SKILLS",
+        "softwares": "SOFTWARES",
+        "example of works": "EXAMPLE OF WORKS",
+        "See more": "See more"
     }
 }
