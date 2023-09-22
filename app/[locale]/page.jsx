@@ -32,7 +32,7 @@ export default function Home() {
    const { locale } = useParams();
 
    return (
-      <HomeStyle className="relative mt-[20px] sm:mt-[110px]">
+      <HomeStyle className="relative mt-[60px] sm:mt-[110px]">
          <div className="relative">
             <div className={`absolute inset-0 transition-all duration-300 ${activeSlide === 1 ? 'visible opacity-100' : 'invisible opacity-0'}`}>
                <Grid container>

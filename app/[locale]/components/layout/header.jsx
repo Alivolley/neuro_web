@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next-intl/link';
+import { usePathname } from 'next/navigation';
+
+// MUI
+import { Drawer } from '@mui/material';
 
 // Assets
-import { Drawer } from '@mui/material';
-import { usePathname } from 'next/navigation';
 import logoHeader from '../../../assets/images/logoHeader.png';
 import logoHeaderPersian from '../../../assets/images/logoHeaderPersian.png';
 import searchImage from '../../../assets/icons/searchHeader.png';
@@ -13,10 +15,10 @@ import menuTogglerIcon from '../../../assets/icons/menu_toggler_icon.svg';
 
 // Components
 import Button from '../form-group/button';
-
-// MUI
+import MobileMenu from './mobile-menu/mobile-menu';
 import ModalComponent from '../template/modal-component';
 import HeaderSearch from '../header-search';
+import RtlProvider from './rtlProvider/rtlProvider';
 
 function Header({ currentLocale }) {
    const [searchModalStatus, setSearchModalStatus] = useState(false);
@@ -95,12 +97,16 @@ function Header({ currentLocale }) {
                </li>
             </ul>
          </div>
-         <Drawer anchor="right" open={mobileMenuStatus} onClose={() => setMobileMenuStatus(false)}>
-            <p className="h-full w-[250px] bg-buttonBgColor p-7 text-menuItemColor">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nemo quasi fugiat ex voluptatem illo expedita iusto voluptatum porro
-               vel, magni at sapiente, cumque iure. Recusandae iusto adipisci ab ducimus.
-            </p>
-         </Drawer>
+         <RtlProvider>
+            <Drawer
+               anchor={currentLocale === 'en' ? 'right' : 'left'}
+               SlideProps={{ direction: currentLocale === 'en' ? 'right' : 'left' }}
+               open={mobileMenuStatus}
+               onClose={() => setMobileMenuStatus(false)}
+            >
+               <MobileMenu currentLocale={currentLocale} setMobileMenuStatus={setMobileMenuStatus} />
+            </Drawer>
+         </RtlProvider>
          <ModalComponent show={searchModalStatus} handleClose={closeSearchModalHandler} fullWidth size="md" fullScreen hasTransition={false}>
             <HeaderSearch closeSearchModalHandler={closeSearchModalHandler} />
          </ModalComponent>
