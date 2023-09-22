@@ -24,19 +24,19 @@ const AppLayoutStyle = styled.div(({ currentLocale, theme }) => ({
       background: 'linear-gradient(90deg, #797F4A 0%, rgba(56, 69, 58, 0.52) 111.13%)',
       width: '1px',
 
-      ...(currentLocale === 'en' && {
-         left: '29px',
-         '@media (min-width: 900px)': {
-            left: '63px',
-         },
-      }),
-
-      ...(currentLocale === 'fa' && {
-         right: '29px',
-         '@media (min-width: 900px)': {
-            right: '63px',
-         },
-      }),
+      ...(currentLocale === 'en'
+         ? {
+              left: '29px',
+              '@media (min-width: 900px)': {
+                 left: '63px',
+              },
+           }
+         : {
+              right: '29px',
+              '@media (min-width: 900px)': {
+                 right: '63px',
+              },
+           }),
    },
 
    '& #left_box': {
@@ -49,19 +49,19 @@ const AppLayoutStyle = styled.div(({ currentLocale, theme }) => ({
          top: '200px',
       },
 
-      ...(currentLocale === 'en' && {
-         left: '30px',
-         '@media (min-width: 900px)': {
-            left: '64px',
-         },
-      }),
-
-      ...(currentLocale === 'fa' && {
-         right: '30px',
-         '@media (min-width: 900px)': {
-            right: '64px',
-         },
-      }),
+      ...(currentLocale === 'en'
+         ? {
+              left: '30px',
+              '@media (min-width: 900px)': {
+                 left: '64px',
+              },
+           }
+         : {
+              right: '30px',
+              '@media (min-width: 900px)': {
+                 right: '64px',
+              },
+           }),
    },
 }));
 

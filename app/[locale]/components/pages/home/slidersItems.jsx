@@ -7,31 +7,31 @@ import frontItem from '../../../../assets/images/frontItem.png';
 import uiuxItem from '../../../../assets/images/uiuxItem.png';
 import SlidersItemStyle from './slidersItem.style';
 
-function SlidersItems({ activeSlide, changeSlide, locale }) {
+function SlidersItems({ activeSlide, setActiveSlide, locale }) {
    return (
       <SlidersItemStyle className="relative w-fit text-goldColor">
          <div className="flex flex-col gap-[80px]">
             <div className="relative" id="item_wrapper">
-               <Image src={uiuxItem} alt="backend" className="cursor-pointer" onClick={() => changeSlide(0)} />
+               <Image src={uiuxItem} alt="backend" className="cursor-pointer" onClick={() => setActiveSlide(1)} />
                <div
-                  className={`absolute top-[30px] h-[14px] w-[14px] rounded-full bg-[#80949C] transition-all duration-200 ${
-                     activeSlide === 0 ? 'bg-[#C6E8EA] shadow-customShadow' : ''
-                  } ${locale === 'fa' ? 'right-[-37px] ' : 'left-[-37px]'}`}
-               />
-            </div>
-            <div className="relative" id="item_wrapper">
-               <Image src={backItem} alt="frontend" className="cursor-pointer" onClick={() => changeSlide(1)} />
-               <div
-                  className={`absolute left-[-37px] top-[30px] h-[14px] w-[14px] rounded-full bg-[#80949C] transition-all duration-200 ${
+                  className={`absolute top-[30px] h-[14px] w-[14px] rounded-full bg-[#80949C] transition-all duration-300 ${
                      activeSlide === 1 ? 'bg-[#C6E8EA] shadow-customShadow' : ''
                   } ${locale === 'fa' ? 'right-[-37px] ' : 'left-[-37px]'}`}
                />
             </div>
             <div className="relative" id="item_wrapper">
-               <Image src={frontItem} alt="uiux" className="cursor-pointer" onClick={() => changeSlide(2)} />
+               <Image src={backItem} alt="frontend" className="cursor-pointer" onClick={() => setActiveSlide(2)} />
                <div
-                  className={`absolute left-[-37px] top-[30px] h-[14px] w-[14px] rounded-full bg-[#80949C] transition-all duration-200 ${
+                  className={`absolute left-[-37px] top-[30px] h-[14px] w-[14px] rounded-full bg-[#80949C] transition-all duration-300 ${
                      activeSlide === 2 ? 'bg-[#C6E8EA] shadow-customShadow' : ''
+                  } ${locale === 'fa' ? 'right-[-37px] ' : 'left-[-37px]'}`}
+               />
+            </div>
+            <div className="relative" id="item_wrapper">
+               <Image src={frontItem} alt="uiux" className="cursor-pointer" onClick={() => setActiveSlide(3)} />
+               <div
+                  className={`absolute left-[-37px] top-[30px] h-[14px] w-[14px] rounded-full bg-[#80949C] transition-all duration-300 ${
+                     activeSlide === 3 ? 'bg-[#C6E8EA] shadow-customShadow' : ''
                   } ${locale === 'fa' ? 'right-[-37px] ' : 'left-[-37px]'}`}
                />
             </div>

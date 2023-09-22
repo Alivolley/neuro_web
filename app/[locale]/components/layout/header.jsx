@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next-intl/link';
@@ -21,6 +21,8 @@ import HeaderSearch from '../header-search';
 function Header({ currentLocale }) {
    const [searchModalStatus, setSearchModalStatus] = useState(false);
    const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
+   const [hasBackGround, setHasBackGround] = useState(false);
+
    const t = useTranslations('header');
    const params = usePathname();
 
@@ -36,8 +38,28 @@ function Header({ currentLocale }) {
       setSearchModalStatus(false);
    };
 
+   const handleScroll = () => {
+      const currentPosition = window.scrollY;
+      if (currentPosition === 0) {
+         setHasBackGround(false);
+      } else {
+         setHasBackGround(true);
+      }
+   };
+
+   useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
+
    return (
-      <header className="sticky top-0 flex h-[120px] items-center justify-between font-avgardn text-menuItemColor">
+      <header
+         className={`sticky top-0 mx-[-32px] flex h-[120px] items-center justify-between duration-300 transition-all z-10 
+         px-[32px] font-avgardn text-menuItemColor customMd:mx-[-80px] customMd:px-[80px] ${hasBackGround ? 'bg-[#0C0D0C]' : ''}`}
+      >
          <div className="flex items-center gap-3 sm:gap-10">
             <div className="w-[25px] sm:w-auto customMd:hidden">
                <Button icon={menuTogglerIcon} onClick={() => setMobileMenuStatus(true)} />

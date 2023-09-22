@@ -2,16 +2,11 @@
 
 'use client';
 
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next-intl/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-
-// Swiper
-import 'swiper/css';
-import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // MUI
 import { Grid } from '@mui/material';
@@ -31,35 +26,15 @@ import ButtonTemplate from './components/form-group/button-template';
 import SlidersItems from './components/pages/home/slidersItems';
 
 export default function Home() {
-   const [activeSlide, setActiveSlide] = useState(0);
-   const swiperRef = useRef();
+   const [activeSlide, setActiveSlide] = useState(1);
 
    const t = useTranslations('home');
    const { locale } = useParams();
 
-   const changeSlide = index => {
-      swiperRef.current.swiper.slideTo(index);
-   };
-
    return (
-      <HomeStyle className="mt-[20px] sm:mt-[110px]">
-         <Swiper
-            loop
-            // eslint-disable-next-line tailwindcss/no-custom-classname
-            className="mySwiper"
-            onSwiper={swiper => setActiveSlide(swiper.realIndex)}
-            modules={[Autoplay]}
-            onSlideChange={swiper => setActiveSlide(swiper.realIndex)}
-            // allowTouchMove={false}
-            ref={swiperRef}
-            speed={1000}
-            spaceBetween={5}
-            autoplay={{
-               delay: 2000,
-               disableOnInteraction: true,
-            }}
-         >
-            <SwiperSlide>
+      <HomeStyle className="relative mt-[20px] sm:mt-[110px]">
+         <div className="relative">
+            <div className={`absolute inset-0 transition-all duration-300 ${activeSlide === 1 ? 'visible opacity-100' : 'invisible opacity-0'}`}>
                <Grid container>
                   <Grid item xs={12} md={7}>
                      <div>
@@ -89,94 +64,90 @@ export default function Home() {
                   <Grid item xs={12} md={5}>
                      <div className="flex items-center gap-12">
                         <div className="flex grow flex-col items-end">
-                           <Image src={uiuxSkeleton} alt="uiuxPicture" onClick={() => changeSlide(2)} />
+                           <Image src={uiuxSkeleton} alt="uiuxPicture" onClick={() => setActiveSlide(1)} />
                         </div>
-                        <SlidersItems activeSlide={activeSlide} changeSlide={changeSlide} locale={locale} />
+                        <SlidersItems activeSlide={activeSlide} setActiveSlide={setActiveSlide} locale={locale} />
                      </div>
                   </Grid>
                </Grid>
-            </SwiperSlide>
+            </div>
 
-            <SwiperSlide>
-               <div className="font-[30px] text-goldColor">
-                  <Grid container spacing={{ xs: 5, md: 0 }}>
-                     <Grid item xs={12} md={7}>
-                        <div>
-                           <div className="ml-5">
-                              <div
-                                 className={`flex flex-wrap text-textColor sm:gap-2 ${
-                                    locale === 'fa'
-                                       ? 'mb-[20px] font-picoopicRegular font-extralight'
-                                       : 'font-aubrey text-[9px] uppercase tracking-[3px] sm:mb-[20px] sm:tracking-[7px] lg:text-[12px]'
-                                 }`}
-                              >
-                                 <p>{t('Development of')}</p>
-                                 <p>{t('client side applications')}</p>
-                              </div>
-                              <HeaderTitle>{t('Frontend developer')}</HeaderTitle>
+            <div className={`transition-all duration-300 ${activeSlide === 2 ? 'visible opacity-100' : 'invisible opacity-0'}`}>
+               <Grid container spacing={{ xs: 5, md: 0 }}>
+                  <Grid item xs={12} md={7}>
+                     <div>
+                        <div className="ml-5">
+                           <div
+                              className={`flex flex-wrap text-textColor sm:gap-2 ${
+                                 locale === 'fa'
+                                    ? 'mb-[20px] font-picoopicRegular font-extralight'
+                                    : 'font-aubrey text-[9px] uppercase tracking-[3px] sm:mb-[20px] sm:tracking-[7px] lg:text-[12px]'
+                              }`}
+                           >
+                              <p>{t('Development of')}</p>
+                              <p>{t('client side applications')}</p>
                            </div>
-
-                           <div className="mb-[90px] mt-[120px]">
-                              <BorderedText>{t('describeFront')}</BorderedText>
-                           </div>
-
-                           <Link href="/">
-                              <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
-                           </Link>
+                           <HeaderTitle>{t('Frontend developer')}</HeaderTitle>
                         </div>
-                     </Grid>
-                     <Grid item xs={12} md={5}>
-                        <div className="flex items-center gap-12">
-                           <div className="flex grow flex-col items-end">
-                              <Image src={frontEndSkeleton} alt="uiuxPicture" onClick={() => changeSlide(2)} />
-                           </div>
-                           <SlidersItems activeSlide={activeSlide} changeSlide={changeSlide} locale={locale} />
+
+                        <div className="mb-[90px] mt-[120px]">
+                           <BorderedText>{t('describeFront')}</BorderedText>
                         </div>
-                     </Grid>
+
+                        <Link href="/">
+                           <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                        </Link>
+                     </div>
                   </Grid>
-               </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-               <div className="font-[30px] text-goldColor">
-                  <Grid container spacing={{ xs: 5, md: 0 }}>
-                     <Grid item xs={12} md={7}>
-                        <div>
-                           <div className="ml-5">
-                              <div
-                                 className={`flex flex-wrap text-textColor sm:gap-2 ${
-                                    locale === 'fa'
-                                       ? 'mb-[20px] font-picoopicRegular font-extralight'
-                                       : 'font-aubrey text-[9px] uppercase tracking-[3px] sm:mb-[20px] sm:tracking-[7px] lg:text-[12px]'
-                                 }`}
-                              >
-                                 <p>{t('Specialist in')}</p>
-                                 <p>{t('server side development')}</p>
-                              </div>
-                              <HeaderTitle>{t('backend developer')}</HeaderTitle>
-                           </div>
-
-                           <div className="mb-[90px] mt-[120px]">
-                              <BorderedText>{t('describeBack')}</BorderedText>
-                           </div>
-
-                           <Link href="/">
-                              <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
-                           </Link>
+                  <Grid item xs={12} md={5}>
+                     <div className="flex items-center gap-12">
+                        <div className="flex grow flex-col items-end">
+                           <Image src={frontEndSkeleton} alt="uiuxPicture" onClick={() => setActiveSlide(2)} />
                         </div>
-                     </Grid>
-                     <Grid item xs={12} md={5}>
-                        <div className="flex items-center gap-12">
-                           <div className="flex grow flex-col items-end">
-                              <Image src={backEndSkeleton} alt="uiuxPicture" onClick={() => changeSlide(2)} />
-                           </div>
-                           <SlidersItems activeSlide={activeSlide} changeSlide={changeSlide} locale={locale} />
-                        </div>
-                     </Grid>
+                        <SlidersItems activeSlide={activeSlide} setActiveSlide={setActiveSlide} locale={locale} />
+                     </div>
                   </Grid>
-               </div>
-            </SwiperSlide>
-         </Swiper>
+               </Grid>
+            </div>
+
+            <div className={`absolute inset-0 transition-all duration-300 ${activeSlide === 3 ? 'visible opacity-100' : 'invisible opacity-0'}`}>
+               <Grid container spacing={{ xs: 5, md: 0 }}>
+                  <Grid item xs={12} md={7}>
+                     <div>
+                        <div className="ml-5">
+                           <div
+                              className={`flex flex-wrap text-textColor sm:gap-2 ${
+                                 locale === 'fa'
+                                    ? 'mb-[20px] font-picoopicRegular font-extralight'
+                                    : 'font-aubrey text-[9px] uppercase tracking-[3px] sm:mb-[20px] sm:tracking-[7px] lg:text-[12px]'
+                              }`}
+                           >
+                              <p>{t('Specialist in')}</p>
+                              <p>{t('server side development')}</p>
+                           </div>
+                           <HeaderTitle>{t('backend developer')}</HeaderTitle>
+                        </div>
+
+                        <div className="mb-[90px] mt-[120px]">
+                           <BorderedText>{t('describeBack')}</BorderedText>
+                        </div>
+
+                        <Link href="/">
+                           <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
+                        </Link>
+                     </div>
+                  </Grid>
+                  <Grid item xs={12} md={5}>
+                     <div className="flex items-center gap-12">
+                        <div className="flex grow flex-col items-end">
+                           <Image src={backEndSkeleton} alt="uiuxPicture" onClick={() => setActiveSlide(2)} />
+                        </div>
+                        <SlidersItems activeSlide={activeSlide} setActiveSlide={setActiveSlide} locale={locale} />
+                     </div>
+                  </Grid>
+               </Grid>
+            </div>
+         </div>
       </HomeStyle>
    );
 }
