@@ -14,7 +14,7 @@ import InfoDetail from '../../components/pages/teamMember-detail/info-detail/inf
 import TabSection from '../../components/pages/teamMember-detail/tab-section/tab-section';
 
 function TeamMemberDetail() {
-   const { slug, locale } = useParams();
+   const { slug } = useParams();
 
    return (
       <div className="relative mt-3 pb-12 customMd:mt-12">
@@ -35,7 +35,7 @@ function TeamMemberDetail() {
             </Grid>
 
             <Grid item display={{ xs: 'none', md: 'flex' }} md={9}>
-               <div className="text-white">
+               <div>
                   <h3 className="font-pubg text-[40px] tracking-[3px] text-titleColor">JASMIN DEHGHAN</h3>
                   <p className="my-5 font-aubrey tracking-[1.5px] text-menuItemColor">UI/UX Designer</p>
                   <p className="font-aubrey text-sm uppercase leading-[42px] tracking-[1.5px] text-[#80949C]">

@@ -70,7 +70,7 @@ function TabSection() {
             }`}
          >
             <p className="text-[10px] customSm:text-sm">{t('example of works')}</p>
-            <Link href="/" className="flex items-center gap-1 customSm:gap-3">
+            <Link href="/teamMember-detail/2/all-projects" className="flex items-center gap-1 customSm:gap-3">
                <p className="text-[10px] customSm:text-sm">{t('See more')}</p>
                <Image src={locale === 'fa' ? arrowIconReverse : arrowIcon} alt="arrow" />
             </Link>
