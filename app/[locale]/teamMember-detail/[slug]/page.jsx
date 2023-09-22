@@ -19,7 +19,7 @@ function TeamMemberDetail() {
    return (
       <div className="relative mt-3 pb-12 customMd:mt-12">
          <Grid container columnSpacing={8} rowSpacing={3}>
-            <Grid item xs={12} md={2.5}>
+            <Grid item xs={12} md={3}>
                <div className="flex gap-4">
                   <div className="aspect-[1/1] w-full max-w-[200px] customSm:aspect-[1/1.3] customMd:max-w-[300px]">
                      <Image src={jasminPic} className="w-full" alt="profile" />
@@ -34,7 +34,7 @@ function TeamMemberDetail() {
                </div>
             </Grid>
 
-            <Grid item display={{ xs: 'none', md: 'flex' }} md={9.5}>
+            <Grid item display={{ xs: 'none', md: 'flex' }} md={9}>
                <div className="text-white">
                   <h3 className="font-pubg text-[40px] tracking-[3px] text-titleColor">JASMIN DEHGHAN</h3>
                   <p className="my-5 font-aubrey tracking-[1.5px] text-menuItemColor">UI/UX Designer</p>
@@ -46,12 +46,12 @@ function TeamMemberDetail() {
                </div>
             </Grid>
 
-            <Grid item xs={12} display={{ sm: 'none', md: 'flex' }} md={2.5}>
+            <Grid item xs={12} display={{ sm: 'none', md: 'flex' }} md={3}>
                <div>
                   <InfoDetail />
                </div>
             </Grid>
-            <Grid item xs={12} md={9.5}>
+            <Grid item xs={12} md={9}>
                <TabSection />
             </Grid>
          </Grid>
