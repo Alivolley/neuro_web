@@ -1,8 +1,6 @@
-/* eslint-disable max-len */
-
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next-intl/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -27,9 +25,32 @@ import SlidersItems from './components/pages/home/slidersItems';
 
 export default function Home() {
    const [activeSlide, setActiveSlide] = useState(1);
+   const intervalRef = useRef(null);
 
    const t = useTranslations('home');
    const { locale } = useParams();
+
+   const changeSlide = () => {
+      setActiveSlide(prev => {
+         if (prev < 3) {
+            return prev + 1;
+         }
+         return 1;
+      });
+   };
+
+   const changeSlideManuel = id => {
+      setActiveSlide(id);
+      clearInterval(intervalRef.current);
+   };
+
+   useEffect(() => {
+      intervalRef.current = setInterval(changeSlide, 1000);
+
+      return () => {
+         clearInterval(intervalRef.current);
+      };
+   }, []);
 
    return (
       <HomeStyle className="relative mt-[60px] sm:mt-[110px]">
@@ -64,9 +85,9 @@ export default function Home() {
                   <Grid item xs={12} md={5}>
                      <div className="flex items-center gap-12">
                         <div className="flex grow flex-col items-end">
-                           <Image src={uiuxSkeleton} alt="uiuxPicture" onClick={() => setActiveSlide(1)} />
+                           <Image src={uiuxSkeleton} alt="uiuxPicture" />
                         </div>
-                        <SlidersItems activeSlide={activeSlide} setActiveSlide={setActiveSlide} locale={locale} />
+                        <SlidersItems activeSlide={activeSlide} changeSlideManuel={changeSlideManuel} locale={locale} />
                      </div>
                   </Grid>
                </Grid>
@@ -102,9 +123,9 @@ export default function Home() {
                   <Grid item xs={12} md={5}>
                      <div className="flex items-center gap-12">
                         <div className="flex grow flex-col items-end">
-                           <Image src={frontEndSkeleton} alt="uiuxPicture" onClick={() => setActiveSlide(2)} />
+                           <Image src={frontEndSkeleton} alt="uiuxPicture" />
                         </div>
-                        <SlidersItems activeSlide={activeSlide} setActiveSlide={setActiveSlide} locale={locale} />
+                        <SlidersItems activeSlide={activeSlide} changeSlideManuel={changeSlideManuel} locale={locale} />
                      </div>
                   </Grid>
                </Grid>
@@ -140,9 +161,9 @@ export default function Home() {
                   <Grid item xs={12} md={5}>
                      <div className="flex items-center gap-12">
                         <div className="flex grow flex-col items-end">
-                           <Image src={backEndSkeleton} alt="uiuxPicture" onClick={() => setActiveSlide(2)} />
+                           <Image src={backEndSkeleton} alt="uiuxPicture" />
                         </div>
-                        <SlidersItems activeSlide={activeSlide} setActiveSlide={setActiveSlide} locale={locale} />
+                        <SlidersItems activeSlide={activeSlide} changeSlideManuel={changeSlideManuel} locale={locale} />
                      </div>
                   </Grid>
                </Grid>
