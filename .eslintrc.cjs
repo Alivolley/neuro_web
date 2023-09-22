@@ -30,6 +30,7 @@ module.exports = {
       'react-hooks/exhaustive-deps': 'off',
       'no-plusplus': 'off',
       'import/no-unresolved': 'off',
+      'import/no-extraneous-dependencies': 'off',
    },
 
    overrides: [
