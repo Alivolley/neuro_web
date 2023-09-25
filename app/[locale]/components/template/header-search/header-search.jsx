@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import { useParams } from 'next/navigation';
 
 // Intl
 import { useTranslations } from 'next-intl';
 
 // Assets
-import { useParams } from 'next/navigation';
 import searchButtonIcon from '../../../../assets/icons/searchButtonIcon.svg';
 import HeaderSearchStyle from './header-search.style';
 
@@ -60,7 +60,7 @@ function HeaderSearch({ closeSearchModalHandler }) {
                      p-4 text-textColor sm:w-[430px]"
                   placeholder={t('Search neuro web')}
                />
-               <ButtonTemplate text={t('Search')} type="submit" icon={searchButtonIcon} />
+               <ButtonTemplate text={t('Search')} type="submit" icon={searchButtonIcon} className="h-[55px]" />
             </form>
             <div
                className={`flex flex-col items-center gap-5 font-avgardn text-textColor sm:flex-row ${locale === 'fa' ? 'font-picoopicRegular' : ''}`}

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next-intl/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useParams } from 'next/navigation';
 
 // MUI
 import { Drawer } from '@mui/material';
@@ -27,6 +27,7 @@ function Header({ currentLocale }) {
 
    const t = useTranslations('header');
    const params = usePathname();
+   const { locale } = useParams();
 
    let detectedRoute = null;
    if (params?.startsWith('/en')) {
@@ -85,9 +86,9 @@ function Header({ currentLocale }) {
                <li>
                   <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'}>
                      <div className="hidden items-center justify-center gap-[6px] customMd:flex">
-                        <p className="font-picoopicRegular">فارسی</p>
+                        <p className={`font-picoopicRegular ${locale === 'en' ? 'text-[#3F4436]' : ''}`}>فارسی</p>
                         <span className="h-[2px] w-6 bg-menuItemColor" />
-                        <p>EN</p>
+                        <p className={`${locale === 'fa' ? 'text-[#3F4436]' : ''}`}>EN</p>
                      </div>
                      <p className="font-picoopicRegular customMd:hidden">{currentLocale === 'fa' ? 'EN' : 'فارسی'}</p>
                   </Link>

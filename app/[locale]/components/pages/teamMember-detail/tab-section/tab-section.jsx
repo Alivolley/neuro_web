@@ -95,52 +95,52 @@ function TabSection() {
          {chosenTab === 2 && (
             <div className={`mt-12 customLg:text-xl ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         HTML / css
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         JavaScript
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         WordPress
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         Bootstrap
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         prototype
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         User Experience (UX)
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         User Interface Design
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         Responsive Web Design
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         Social Media Marketing
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         Research
                      </p>
@@ -152,32 +152,32 @@ function TabSection() {
          {chosenTab === 3 && (
             <div className={`mt-12 customLg:text-xl ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         figma
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         adobe xd
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         Adobe Photoshop
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         Adobe Illustrator
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         terello
                      </p>
                   </Grid>
-                  <Grid item xs={12} sm={6} xl={4}>
+                  <Grid item xs={6} xl={4}>
                      <p className="px-4 text-menuItemColor" id="circle_color">
                         canva
                      </p>

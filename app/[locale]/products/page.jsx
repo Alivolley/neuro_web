@@ -22,7 +22,7 @@ function PageSome() {
 
    return (
       <div className="z-[2] mt-[20px] sm:mt-[110px]">
-         <Grid container spacing={{ xs: 5, lg: 2 }}>
+         <Grid container spacing={{ xs: 5, lg: 4 }}>
             <Grid item xs={12} lg={5}>
                <div>
                   <div className="ml-5">
@@ -38,7 +38,7 @@ function PageSome() {
                      <HeaderTitle>{t('Our products')}</HeaderTitle>
                   </div>
 
-                  <div className="mb-[90px] mt-[120px]">
+                  <div className="mb-[90px] mt-[100px]">
                      <BorderedText>{t('Our product description')}</BorderedText>
                   </div>
 
@@ -49,16 +49,16 @@ function PageSome() {
             </Grid>
             <Grid item xs={12} lg={7}>
                <Grid container spacing={4}>
-                  <Grid item xs={12} md={6} xl={4}>
+                  <Grid item xs={12} md={6}>
                      <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
                   </Grid>
-                  <Grid item xs={12} md={6} xl={4}>
+                  <Grid item xs={12} md={6}>
                      <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
                   </Grid>
-                  <Grid item xs={12} md={6} xl={4}>
+                  <Grid item xs={12} md={6}>
                      <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
                   </Grid>
-                  <Grid item xs={12} md={6} xl={4}>
+                  <Grid item xs={12} md={6}>
                      <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
                   </Grid>
                </Grid>

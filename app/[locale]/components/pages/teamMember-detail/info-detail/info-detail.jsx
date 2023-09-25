@@ -12,7 +12,7 @@ function InfoDetail() {
    const { locale } = useParams();
 
    return (
-      <div className={`mt-7 flex gap-3 customMd:block ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
+      <div className={`mt-7 flex gap-5 customMd:block ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
          <div className="space-y-5">
             <div className="space-y-1">
                <p className="text-titleColor">{t('Phone')}</p>

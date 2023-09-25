@@ -2,11 +2,12 @@ import styled from '@emotion/styled';
 
 // Assets
 import appBg from '../../../assets/images/appBackground.png';
+import appBgRtl from '../../../assets/images/appBackgroundRtl.png';
 
 const AppLayoutStyle = styled.div(({ currentLocale, theme }) => ({
    position: 'relative',
-   backgroundImage: `url(${appBg.src})`,
-   backgroundPosition: 'bottom center',
+   backgroundImage: `url(${theme.direction === 'ltr' ? appBg.src : appBgRtl.src})`,
+   backgroundPosition: 'center center',
    backgroundRepeat: 'no-repeat',
    backgroundSize: 'cover',
    backgroundAttachment: 'fixed',

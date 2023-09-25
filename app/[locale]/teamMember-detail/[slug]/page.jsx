@@ -22,7 +22,7 @@ function TeamMemberDetail() {
             <Grid item xs={12} md={3}>
                <div className="flex gap-4">
                   <div className="aspect-[1/1] w-full max-w-[200px] customSm:aspect-[1/1.3] customMd:max-w-[300px]">
-                     <Image src={jasminPic} className="w-full" alt="profile" />
+                     <Image src={jasminPic} className="h-full w-full" alt="profile" />
                   </div>
                   <div className="customMd:hidden">
                      <h3 className="whitespace-nowrap font-pubg text-2xl tracking-[3px] text-titleColor">JASMIN DEHGHAN</h3>

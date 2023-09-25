@@ -150,7 +150,7 @@ function OurTeam() {
             </div>
          </div>
 
-         <div className="mt-12 flex max-w-sm items-center gap-5 px-3 customMd:hidden">
+         <div className="mt-12 flex max-w-sm items-end gap-5 px-3 customMd:hidden">
             <div className="mt-5 flex gap-3">
                <div
                   className={`aspect-[1/1.5] w-10 rounded-sm transition-all duration-200 ${activeSlide === 1 ? '-translate-y-5' : ''}`}
