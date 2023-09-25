@@ -12,7 +12,7 @@ import getDesignTokens from '../../../configs/theme';
 import AppLayoutStyle from './app-layout.style';
 
 // Components
-import Header from './header';
+import Header from './header/header';
 
 function AppLayout({ children, currentLocale }) {
    const { locale } = useParams();

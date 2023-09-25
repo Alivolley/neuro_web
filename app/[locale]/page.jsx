@@ -18,10 +18,10 @@ import frontEndSkeleton from '../assets/images/frontEndSkeleton.png';
 import backEndSkeleton from '../assets/images/backEndSkeleton.png';
 
 // Components
-import HeaderTitle from './components/template/header-title';
-import BorderedText from './components/template/bordered-text';
-import ButtonTemplate from './components/form-group/button-template';
-import SlidersItems from './components/pages/home/slidersItems';
+import HeaderTitle from './components/template/header-title/header-title';
+import BorderedText from './components/template/bordered-text/bordered-text';
+import ButtonTemplate from './components/form-group/button-template/button-template';
+import SlidersItems from './components/pages/home/slidersItem/slidersItems';
 
 export default function Home() {
    const [activeSlide, setActiveSlide] = useState(1);
@@ -45,7 +45,7 @@ export default function Home() {
    };
 
    useEffect(() => {
-      intervalRef.current = setInterval(changeSlide, 1000);
+      intervalRef.current = setInterval(changeSlide, 3000);
 
       return () => {
          clearInterval(intervalRef.current);

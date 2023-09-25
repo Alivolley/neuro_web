@@ -14,7 +14,7 @@ import samplePicture from '../../../../assets/images/sample_picture.png';
 
 // Components
 import InfoDetail from '../../../components/pages/teamMember-detail/info-detail/info-detail';
-import ProductCard from '../../../components/template/product-card';
+import ProductCard from '../../../components/template/product-card/product-card';
 import RtlProvider from '../../../components/layout/rtlProvider/rtlProvider';
 import { AllProductsSelect, AllProductsTabs } from '../../../allProducts/allProducts.style';
 

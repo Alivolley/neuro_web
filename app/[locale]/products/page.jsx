@@ -11,10 +11,10 @@ import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
 import samplePicture from '../../assets/images/sample_picture.png';
 
 // MUI
-import HeaderTitle from '../components/template/header-title';
-import BorderedText from '../components/template/bordered-text';
-import ButtonTemplate from '../components/form-group/button-template';
-import ProductCard from '../components/template/product-card';
+import HeaderTitle from '../components/template/header-title/header-title';
+import BorderedText from '../components/template/bordered-text/bordered-text';
+import ButtonTemplate from '../components/form-group/button-template/button-template';
+import ProductCard from '../components/template/product-card/product-card';
 
 function PageSome() {
    const { locale } = useParams();

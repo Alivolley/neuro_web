@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 // Assets
-import backItem from '../../../../assets/images/backItem.png';
-import frontItem from '../../../../assets/images/frontItem.png';
-import uiuxItem from '../../../../assets/images/uiuxItem.png';
+import backItem from '../../../../../assets/images/backItem.png';
+import frontItem from '../../../../../assets/images/frontItem.png';
+import uiuxItem from '../../../../../assets/images/uiuxItem.png';
 import SlidersItemStyle from './slidersItem.style';
 
 function SlidersItems({ activeSlide, changeSlideManuel, locale }) {

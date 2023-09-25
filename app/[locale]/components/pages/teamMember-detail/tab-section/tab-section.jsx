@@ -14,7 +14,7 @@ import arrowIconReverse from '../../../../../assets/icons/arrowIconReverse.svg';
 import TabSectionStyle from './tab-section.style';
 
 // Components
-import ProductCard from '../../../template/product-card';
+import ProductCard from '../../../template/product-card/product-card';
 
 function TabSection() {
    const [chosenTab, setChosenTab] = useState(1);

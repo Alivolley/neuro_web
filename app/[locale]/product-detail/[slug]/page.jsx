@@ -16,7 +16,7 @@ import arrowIconReverse from '../../../assets/icons/arrowIconReverse.svg';
 // Mui
 
 // components
-import ProductCard from '../../components/template/product-card';
+import ProductCard from '../../components/template/product-card/product-card';
 
 function ChosenProduct() {
    const { slug, locale } = useParams();

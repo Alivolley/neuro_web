@@ -12,7 +12,7 @@ import { AllProductsSelect, AllProductsTabs } from './allProducts.style';
 import samplePicture from '../../assets/images/sample_picture.png';
 
 // Components
-import ProductCard from '../components/template/product-card';
+import ProductCard from '../components/template/product-card/product-card';
 import RtlProvider from '../components/layout/rtlProvider/rtlProvider';
 
 function AllProducts() {

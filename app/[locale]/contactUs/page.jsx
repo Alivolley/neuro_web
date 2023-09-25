@@ -13,10 +13,10 @@ import mailBox from '../../assets/icons/mailBox.svg';
 import phoneIcon from '../../assets/icons/phoneIcon.svg';
 
 // components
-import HeaderTitle from '../components/template/header-title';
-import InputComponent from '../components/form-group/input-component';
-import ButtonTemplate from '../components/form-group/button-template';
-import TextareaComponent from '../components/form-group/textarea-component';
+import HeaderTitle from '../components/template/header-title/header-title';
+import InputComponent from '../components/form-group/input-component/input-component';
+import ButtonTemplate from '../components/form-group/button-template/button-template';
+import TextareaComponent from '../components/form-group/textarea-component/textarea-component';
 
 // MUI
 

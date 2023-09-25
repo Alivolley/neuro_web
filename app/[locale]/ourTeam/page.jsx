@@ -17,9 +17,9 @@ import lineArrow from '../../assets/images/line_arrow.png';
 import OurTeamCard from './ourTeam.style';
 
 // components
-import HeaderTitle from '../components/template/header-title';
-import ButtonTemplate from '../components/form-group/button-template';
-import BorderedText from '../components/template/bordered-text';
+import HeaderTitle from '../components/template/header-title/header-title';
+import ButtonTemplate from '../components/form-group/button-template/button-template';
+import BorderedText from '../components/template/bordered-text/bordered-text';
 
 // MUI
 

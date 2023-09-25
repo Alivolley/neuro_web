@@ -8,17 +8,17 @@ import { usePathname } from 'next/navigation';
 import { Drawer } from '@mui/material';
 
 // Assets
-import logoHeader from '../../../assets/images/logoHeader.png';
-import logoHeaderPersian from '../../../assets/images/logoHeaderPersian.png';
-import searchImage from '../../../assets/icons/searchHeader.png';
-import menuTogglerIcon from '../../../assets/icons/menu_toggler_icon.svg';
+import logoHeader from '../../../../assets/images/logoHeader.png';
+import logoHeaderPersian from '../../../../assets/images/logoHeaderPersian.png';
+import searchImage from '../../../../assets/icons/searchHeader.png';
+import menuTogglerIcon from '../../../../assets/icons/menu_toggler_icon.svg';
 
 // Components
-import Button from '../form-group/button';
-import MobileMenu from './mobile-menu/mobile-menu';
-import ModalComponent from '../template/modal-component';
-import HeaderSearch from '../header-search';
-import RtlProvider from './rtlProvider/rtlProvider';
+import Button from '../../form-group/button/button';
+import MobileMenu from '../mobile-menu/mobile-menu';
+import ModalComponent from '../../template/modal-component/modal-component';
+import HeaderSearch from '../../template/header-search/header-search';
+import RtlProvider from '../rtlProvider/rtlProvider';
 
 function Header({ currentLocale }) {
    const [searchModalStatus, setSearchModalStatus] = useState(false);

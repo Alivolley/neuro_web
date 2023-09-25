@@ -7,13 +7,13 @@ import { useTranslations } from 'next-intl';
 
 // Assets
 import { useParams } from 'next/navigation';
-import searchButtonIcon from '../../assets/icons/searchButtonIcon.svg';
+import searchButtonIcon from '../../../../assets/icons/searchButtonIcon.svg';
 import HeaderSearchStyle from './header-search.style';
 
 // Components
-import InputComponent from './form-group/input-component';
-import ButtonTemplate from './form-group/button-template';
-import useOnClickOutside from '../../hooks/useOnclickOutside';
+import InputComponent from '../../form-group/input-component/input-component';
+import ButtonTemplate from '../../form-group/button-template/button-template';
+import useOnClickOutside from '../../../../hooks/useOnclickOutside';
 
 function HeaderSearch({ closeSearchModalHandler }) {
    const t = useTranslations('searchModal');
