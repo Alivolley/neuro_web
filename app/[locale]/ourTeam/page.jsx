@@ -20,6 +20,7 @@ import OurTeamCard from './ourTeam.style';
 import HeaderTitle from '../components/template/header-title/header-title';
 import ButtonTemplate from '../components/form-group/button-template/button-template';
 import BorderedText from '../components/template/bordered-text/bordered-text';
+import useOurTeam from '../apis/useOurTeam/useOurTeam';
 
 // MUI
 
@@ -32,6 +33,11 @@ function OurTeam() {
 
    const { locale } = useParams();
    const t = useTranslations('ourTeam');
+
+   const { data, isLoading, error } = useOurTeam();
+
+   console.log(error);
+
    return (
       <OurTeamCard>
          <div className="mt-[20px] sm:mt-[110px]">

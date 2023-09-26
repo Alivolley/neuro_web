@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+// const language = localStorage.getItem
+
 const axiosInstance = axios.create({
-   baseURL: process.env.REACT_APP_BASE_URL,
+   baseURL: 'https://neuroweb.pythonanywhere.com/',
 });
 
 axiosInstance.interceptors.request.use(async config => config);

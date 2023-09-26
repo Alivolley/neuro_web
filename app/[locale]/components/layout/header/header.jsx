@@ -20,6 +20,9 @@ import ModalComponent from '../../template/modal-component/modal-component';
 import HeaderSearch from '../../template/header-search/header-search';
 import RtlProvider from '../rtlProvider/rtlProvider';
 
+// hooks
+import useCookie from '../../../../hooks/useCookie';
+
 function Header({ currentLocale }) {
    const [searchModalStatus, setSearchModalStatus] = useState(false);
    const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
@@ -28,6 +31,7 @@ function Header({ currentLocale }) {
    const t = useTranslations('header');
    const params = usePathname();
    const { locale } = useParams();
+   const { getCookie, addCookie, updateCookie } = useCookie();
 
    let detectedRoute = null;
    if (params?.startsWith('/en')) {
@@ -53,10 +57,22 @@ function Header({ currentLocale }) {
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
 
+      if (!getCookie('neuroCodeLocale')) {
+         addCookie('neuroCodeLocale', 'fa');
+      }
+
       return () => {
          window.removeEventListener('scroll', handleScroll);
       };
    }, []);
+
+   const changeLocaleCookie = () => {
+      if (currentLocale === 'fa') {
+         updateCookie('neuroCodeLocale', 'en');
+      } else {
+         updateCookie('neuroCodeLocale', 'fa');
+      }
+   };
 
    return (
       <header
@@ -86,7 +102,7 @@ function Header({ currentLocale }) {
                   <Link href="/articles">{t('Articles')}</Link>
                </li>
                <li>
-                  <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'}>
+                  <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'} onClick={changeLocaleCookie}>
                      <div className="hidden items-center justify-center gap-[6px] customMd:flex">
                         <p className={`font-picoopicRegular ${locale === 'en' ? 'text-[#3F4436]' : ''}`}>فارسی</p>
                         <span className="h-[2px] w-6 bg-menuItemColor" />

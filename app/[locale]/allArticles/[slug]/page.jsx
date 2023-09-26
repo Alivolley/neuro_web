@@ -26,7 +26,7 @@ function AllArticles() {
             <HeaderTitle>{t(`Articles related to ${slug}`)}</HeaderTitle>
          </div>
 
-         <div className="mt-16">
+         <div className="mt-28">
             <Grid container spacing={4}>
                <Grid item xs={12} sm={6} lg={4}>
                   <ArticleCard

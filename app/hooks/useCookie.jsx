@@ -4,6 +4,10 @@ import Cookies from 'js-cookie';
 export default function useCookie() {
    const [value, setValue] = useState();
 
+   const getCookie = name => {
+      Cookies.get(name);
+   };
+
    const addCookie = (name, defaultValue, options) => {
       const cookie = Cookies.get(name);
       if (cookie) {
@@ -24,5 +28,5 @@ export default function useCookie() {
       setValue(null);
    };
 
-   return { value, addCookie, updateCookie, deleteCookie };
+   return { value, addCookie, updateCookie, deleteCookie, getCookie };
 }
