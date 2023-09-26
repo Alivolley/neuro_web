@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const language = Cookies.get('neuroCodeLocale') || 'en';
+const language = Cookies.get('neuroCodeLocale') || 'fa';
 
 const axiosInstance = axios.create({
    baseURL: 'https://neuroweb.pythonanywhere.com/',

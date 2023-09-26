@@ -18,7 +18,7 @@ export function generateStaticParams() {
 }
 
 export default async function RootLayout({ children }) {
-   const locale = Cookies.get('neuroCodeLocale') || 'en';
+   const locale = Cookies.get('neuroCodeLocale') || 'fa';
 
    let messages = null;
    try {
