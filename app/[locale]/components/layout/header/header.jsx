@@ -59,6 +59,12 @@ function Header({ currentLocale }) {
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
 
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
+
+   useEffect(() => {
       if (!getCookie('neuroCodeLocale')) {
          addCookie('neuroCodeLocale', 'fa');
       } else if (locale !== getCookie('neuroCodeLocale')) {
@@ -66,11 +72,7 @@ function Header({ currentLocale }) {
             locale: getCookie('neuroCodeLocale'),
          });
       }
-
-      return () => {
-         window.removeEventListener('scroll', handleScroll);
-      };
-   }, []);
+   }, [getCookie('neuroCodeLocale')]);
 
    const changeLocaleCookie = () => {
       if (currentLocale === 'fa') {
