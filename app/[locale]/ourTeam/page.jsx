@@ -8,11 +8,11 @@ import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next-intl/link';
+import { toast } from 'react-toastify';
 
 // Assets
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
-import jasminPicture from '../../assets/images/jasminPicture.png';
 import lineArrow from '../../assets/images/line_arrow.png';
 import OurTeamCard from './ourTeam.style';
 
@@ -37,10 +37,9 @@ function OurTeam() {
 
    const { data: teamMemberData, isLoading: teamMemberIsLoading, error: teamMemberError } = useOurTeam();
 
-   console.log(teamMemberData);
-
    return (
       <OurTeamCard>
+         {teamMemberError && toast.error('an error accrued')}
          <div className="mt-[20px] sm:mt-[110px]">
             <div
                className={`flex flex-wrap text-textColor sm:gap-2 ${
@@ -65,11 +64,11 @@ function OurTeam() {
                         className={`flex h-60 cursor-pointer items-center justify-center bg-[#101211] customSm:h-72 customMd:h-80 ${
                            index === 1 ? '' : 'customMd:mt-20'
                         }`}
-                        onClick={() => changeSlideHandler(1)}
+                        onClick={() => changeSlideHandler(index + 1)}
                      >
                         <div
                            className={`flex flex-col justify-center transition-all duration-300 ${
-                              activeSlide === 1
+                              activeSlide === index + 1
                                  ? `visible h-full w-[150px] px-4 py-6 opacity-100 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]`
                                  : 'invisible h-0 w-0 scale-0 opacity-0'
                            }`}
@@ -79,7 +78,7 @@ function OurTeam() {
                            <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
                               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
                            </p>
-                           <Link href="/teamMember-detail/2">
+                           <Link href={`/teamMember-detail/${item.id}`}>
                               <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                            </Link>
                         </div>
@@ -87,7 +86,7 @@ function OurTeam() {
                            <img src={item.image} alt="team member" className="h-full w-full grayscale" />
                            <div
                               className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
-                                 activeSlide !== 1 ? 'visible opacity-100' : 'invisible opacity-0'
+                                 activeSlide !== index + 1 ? 'visible opacity-100' : 'invisible opacity-0'
                               }`}
                            >
                               <p className="text-[10px] text-titleColor customMd:text-[18px]">{item.full_name}</p>
@@ -96,96 +95,21 @@ function OurTeam() {
                         </div>
                      </div>
                   ))}
-
-                  {/* <div
-                  className="flex h-60 cursor-pointer items-center justify-center bg-[#101211] customSm:h-72 customMd:h-80"
-                  onClick={() => changeSlideHandler(2)}
-               >
-                  <div
-                     className={`flex flex-col justify-center transition-all duration-300 ${
-                        activeSlide === 2
-                           ? `visible h-full w-[150px] px-4 py-6 opacity-100 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]`
-                           : 'invisible h-0 w-0 scale-0 opacity-0'
-                     }`}
-                  >
-                     <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
-                     <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
-                     <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
-                     </p>
-                     <Link href="/teamMember-detail/2">
-                        <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
-                     </Link>
-                  </div>
-                  <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
-                     <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
-                     <div
-                        className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
-                           activeSlide !== 2 ? 'visible opacity-100' : 'invisible opacity-0'
-                        }`}
-                     >
-                        <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
-                        <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div
-                  className="flex h-60 cursor-pointer items-center justify-center bg-[#101211] customSm:h-72 customMd:mt-20 customMd:h-80"
-                  onClick={() => changeSlideHandler(3)}
-               >
-                  <div
-                     className={`flex flex-col justify-center transition-all duration-300 ${
-                        activeSlide === 3
-                           ? `visible h-full w-[150px] px-4 py-6 opacity-100 customSm:w-[220px] customSm:px-7 customSm:py-12 customMd:w-[250px]`
-                           : 'invisible h-0 w-0 scale-0 opacity-0'
-                     }`}
-                  >
-                     <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
-                     <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
-                     <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
-                     </p>
-                     <Link href="/teamMember-detail/2">
-                        <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
-                     </Link>
-                  </div>
-                  <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
-                     <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
-                     <div
-                        className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
-                           activeSlide !== 3 ? 'visible opacity-100' : 'invisible opacity-0'
-                        }`}
-                     >
-                        <p className="text-[10px] text-titleColor customMd:text-[18px]">jasmin dehghan</p>
-                        <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">ui-ux designer</p>
-                     </div>
-                  </div>
-               </div> */}
                </div>
             )}
          </div>
 
          <div className="mt-12 flex max-w-sm items-end gap-5 px-3 customMd:hidden">
             <div className="mt-5 flex gap-3">
-               <div
-                  className={`aspect-[1/1.5] w-10 rounded-sm transition-all duration-200 ${activeSlide === 1 ? '-translate-y-5' : ''}`}
-                  onClick={() => changeSlideHandler(1)}
-               >
-                  <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
-               </div>
-               <div
-                  className={`aspect-[1/1.5] w-10 rounded-sm transition-all duration-200 ${activeSlide === 2 ? '-translate-y-5' : ''}`}
-                  onClick={() => changeSlideHandler(2)}
-               >
-                  <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
-               </div>
-               <div
-                  className={`aspect-[1/1.5] w-10 rounded-sm transition-all duration-200 ${activeSlide === 3 ? '-translate-y-5' : ''}`}
-                  onClick={() => changeSlideHandler(3)}
-               >
-                  <Image src={jasminPicture} alt="team member picture" className="h-full w-full" />
-               </div>
+               {teamMemberData?.data?.map((item, index) => (
+                  <div
+                     key={item.id}
+                     className={`aspect-[1/1.5] w-10 rounded-sm transition-all duration-200 ${activeSlide === index + 1 ? '-translate-y-5' : ''}`}
+                     onClick={() => changeSlideHandler(index + 1)}
+                  >
+                     <img src={item.image} alt="team member" className="h-full w-full grayscale" />
+                  </div>
+               ))}
             </div>
             <div className="flex grow items-center gap-2 text-xl font-bold text-titleColor">
                <p>{activeSlide}</p>

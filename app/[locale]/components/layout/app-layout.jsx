@@ -2,6 +2,7 @@
 
 import { Provider } from 'react-redux';
 import { useParams, usePathname } from 'next/navigation';
+import { ToastContainer } from 'react-toastify';
 
 // MUI
 import { ThemeProvider, createTheme } from '@mui/material';
@@ -10,6 +11,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import store from '../../../store/store';
 import getDesignTokens from '../../../configs/theme';
 import AppLayoutStyle from './app-layout.style';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Components
 import Header from './header/header';
@@ -34,6 +36,7 @@ function AppLayout({ children, currentLocale }) {
                {!notShowBox && <div id="left_box" />}
                <Header currentLocale={currentLocale} />
                {children}
+               <ToastContainer theme="dark" />
             </AppLayoutStyle>
          </ThemeProvider>
       </Provider>
