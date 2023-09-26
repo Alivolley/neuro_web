@@ -18,7 +18,8 @@ export function generateStaticParams() {
 }
 
 export default async function RootLayout({ children }) {
-   const locale = Cookies.get('neuroCodeLocale') || 'fa';
+   const localeFromCookie = Cookies.get('neuroCodeLocale'); // Replace 'locale' with the name of your cookie storing the locale value
+   const locale = localeFromCookie || 'fa'; // Set a default locale if the cookie value is not available
 
    let messages = null;
    try {
