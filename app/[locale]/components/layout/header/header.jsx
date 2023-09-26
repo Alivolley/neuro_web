@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next-intl/link';
 import { usePathname, useParams } from 'next/navigation';
-import { useRouter } from 'next-intl/client';
 
 // MUI
 import { Drawer } from '@mui/material';
@@ -31,7 +30,6 @@ function Header({ currentLocale }) {
 
    const t = useTranslations('header');
    const params = usePathname();
-   const router = useRouter();
    const { locale } = useParams();
    const { getCookie, addCookie, updateCookie } = useCookie();
 
@@ -59,20 +57,14 @@ function Header({ currentLocale }) {
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
 
+      if (!getCookie('neuroCodeLocale')) {
+         addCookie('neuroCodeLocale', 'fa');
+      }
+
       return () => {
          window.removeEventListener('scroll', handleScroll);
       };
    }, []);
-
-   useEffect(() => {
-      if (!getCookie('neuroCodeLocale')) {
-         addCookie('neuroCodeLocale', 'fa');
-      } else if (locale !== getCookie('neuroCodeLocale')) {
-         router.push(detectedRoute, {
-            locale: getCookie('neuroCodeLocale'),
-         });
-      }
-   }, [getCookie('neuroCodeLocale')]);
 
    const changeLocaleCookie = () => {
       if (currentLocale === 'fa') {
