@@ -36,8 +36,11 @@ function MobileMenu({ currentLocale, setMobileMenuStatus }) {
             <Link href="/ourTeam" className="mt-6 border-b border-[#3F4436] pb-6">
                {t('Our team')}
             </Link>
-            <Link href="/contactUs" className="mt-6 pb-6">
+            <Link href="/contactUs" className="mt-6 border-b border-[#3F4436] pb-6">
                {t('Contact us')}
+            </Link>
+            <Link href="/articles" className="mt-6 pb-6">
+               {t('Articles')}
             </Link>
          </div>
       </div>

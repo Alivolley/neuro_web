@@ -5,8 +5,10 @@ import { useParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 
-// assets
+// MUI
 import { Grid } from '@mui/material';
+
+// assets
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
 import mailBox from '../../assets/icons/mailBox.svg';

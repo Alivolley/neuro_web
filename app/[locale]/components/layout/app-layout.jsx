@@ -19,7 +19,11 @@ function AppLayout({ children, currentLocale }) {
 
    const themeConfig = createTheme(getDesignTokens('light', locale));
    const pathname = usePathname();
-   const notShowBox = pathname.endsWith('/allProducts') || /\/product-detail\/(.+)/.test(pathname) || pathname.endsWith('/contactUs');
+   const notShowBox =
+      pathname.endsWith('/allProducts') ||
+      /\/product-detail\/(.+)/.test(pathname) ||
+      pathname.endsWith('/contactUs') ||
+      pathname.endsWith('/articles');
 
    return (
       <Provider store={store}>

@@ -86,5 +86,18 @@
         "softwares": "SOFTWARES",
         "example of works": "EXAMPLE OF WORKS",
         "See more": "See more"
+    },
+    "articles": {
+        "articles": "articles",
+        "articles title": "Insightful Articles to Expand Your Knowledge and Broaden Your Horizons",
+        "all articles": "All articles",
+        "Frontend": "Frontend",
+        "Backend": "Backend",
+        "UiUx": "UiUx",
+        "All frontend articles": "All frontend articles",
+        "All backend articles": "All backend articles",
+        "All uiux articles": "All uiux articles",
+        "All  articles": "All articles",
+        "read more": "Read more"
     }
 }

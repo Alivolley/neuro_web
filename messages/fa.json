@@ -86,5 +86,18 @@
         "softwares": "نرم افزار ها",
         "example of works": "نمونه کار ها",
         "See more": "مشاهده بیشتر"
+    },
+    "articles": {
+        "articles": "مقالات",
+        "articles title": "مقالات پر محتوا برای گسترش دانش و افق های خود",
+        "all articles": "همه ی مقالات",
+        "Frontend": "فرانت اند",
+        "Backend": "بک اند",
+        "UiUx": "یوآی یوایکس",
+        "All frontend articles": "تمام مقالات فرانت اند",
+        "All backend articles": "تمام مقالات بک اند",
+        "All uiux articles": "تمام مقالات یوآی یوایکس",
+        "All  articles": "همه ی مقالات",
+        "read more": "بیشتر بخوانید"
     }
 }

@@ -82,7 +82,9 @@ function Header({ currentLocale }) {
                <li className="hidden customMd:list-item">
                   <Link href="/contactUs">{t('Contact us')}</Link>
                </li>
-               {/* <li className='hidden customMd:list-item'>{t('Articles')}</li> */}
+               <li className="hidden customMd:list-item">
+                  <Link href="/articles">{t('Articles')}</Link>
+               </li>
                <li>
                   <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'}>
                      <div className="hidden items-center justify-center gap-[6px] customMd:flex">
