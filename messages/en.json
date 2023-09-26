@@ -98,6 +98,10 @@
         "All backend articles": "All backend articles",
         "All uiux articles": "All uiux articles",
         "All  articles": "All articles",
-        "read more": "Read more"
+        "read more": "Read more",
+        "Articles related to frontend": "Articles related to frontend",
+        "Articles related to backend": "Articles related to backend",
+        "Articles related to uiux": "Articles related to uiux",
+        "Articles related to all": "All articles"
     }
 }

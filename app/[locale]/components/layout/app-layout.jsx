@@ -22,6 +22,7 @@ function AppLayout({ children, currentLocale }) {
    const notShowBox =
       pathname.endsWith('/allProducts') ||
       /\/product-detail\/(.+)/.test(pathname) ||
+      /\/allArticles\/(.+)/.test(pathname) ||
       pathname.endsWith('/contactUs') ||
       pathname.endsWith('/articles');
 

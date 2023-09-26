@@ -98,6 +98,10 @@
         "All backend articles": "تمام مقالات بک اند",
         "All uiux articles": "تمام مقالات یوآی یوایکس",
         "All  articles": "همه ی مقالات",
-        "read more": "بیشتر بخوانید"
+        "read more": "بیشتر بخوانید",
+        "Articles related to frontend": "مقالات مربوط به فرانت اند",
+        "Articles related to backend": "مقالات مربوط به بک اند",
+        "Articles related to uiux": "مقالات مربوط به یوآی یوایکس",
+        "Articles related to all": "تمامی مقالات"
     }
 }
