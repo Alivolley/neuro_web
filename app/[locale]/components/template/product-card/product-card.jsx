@@ -39,7 +39,9 @@ function ProductCard({ bigPic, firstSubPic, secondSubPic, thirdSubPic, userId, p
                   </div>
                </Grid>
             </Grid>
-            <p className={`my-3 text-center text-textBlue ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}>{title}</p>
+            <p className={`my-3 text-center capitalize text-textBlue ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1px]'}`}>
+               {title}
+            </p>
          </Link>
       </div>
    );

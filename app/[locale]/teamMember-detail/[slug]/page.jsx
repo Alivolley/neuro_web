@@ -18,14 +18,12 @@ function TeamMemberDetail() {
 
    const { data: teamMemberData, isLoading: teamMemberIsLoading } = useTeamMemberDetail(slug);
 
-   console.log(teamMemberData);
-
    return (
       <div className="relative mt-3 pb-12 customMd:mt-12">
          <Grid container columnSpacing={8} rowSpacing={3}>
             {teamMemberIsLoading ? (
                <div className="flex h-full w-full items-center justify-center text-goldColor">
-                  <CircleLoader color="#CCAA60" size={100} />
+                  <CircleLoader color="#CCAA60" size={80} />
                </div>
             ) : (
                <>
