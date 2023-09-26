@@ -67,6 +67,14 @@ const getDesignTokens = (mode, locale) => ({
             },
          },
       },
+
+      MuiSkeleton: {
+         styleOverrides: {
+            root: {
+               backgroundColor: '#2e31357b',
+            },
+         },
+      },
    },
 });
 
