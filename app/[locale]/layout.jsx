@@ -1,6 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import Cookies from 'js-cookie';
 
 // Assets
 import '../globals.css';
@@ -17,10 +16,7 @@ export function generateStaticParams() {
    return [{ locale: 'en' }, { locale: 'fa' }];
 }
 
-export default async function RootLayout({ children }) {
-   const localeFromCookie = Cookies.get('neuroCodeLocale'); // Replace 'locale' with the name of your cookie storing the locale value
-   const locale = localeFromCookie || 'fa'; // Set a default locale if the cookie value is not available
-
+export default async function RootLayout({ children, params: { locale } }) {
    let messages = null;
    try {
       messages = (await import(`../../messages/${locale}.json`)).default;
