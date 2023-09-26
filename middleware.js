@@ -1,11 +1,8 @@
 import createMiddleware from 'next-intl/middleware';
-import Cookies from 'js-cookie';
-
-const cookieLocale = Cookies.get('neuroCodeLocale');
 
 export default createMiddleware({
    locales: ['en', 'fa'],
-   defaultLocale: cookieLocale || 'fa',
+   defaultLocale: 'fa',
    localeDetection: false,
 });
 
