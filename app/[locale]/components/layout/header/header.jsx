@@ -57,8 +57,8 @@ function Header({ currentLocale }) {
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
 
-      if (!getCookie('neuroCodeLocale')) {
-         addCookie('neuroCodeLocale', 'fa');
+      if (!getCookie('NEXT_LOCALE')) {
+         addCookie('NEXT_LOCALE', 'fa');
       }
 
       return () => {
@@ -68,9 +68,9 @@ function Header({ currentLocale }) {
 
    const changeLocaleCookie = () => {
       if (currentLocale === 'fa') {
-         updateCookie('neuroCodeLocale', 'en');
+         updateCookie('NEXT_LOCALE', 'en');
       } else {
-         updateCookie('neuroCodeLocale', 'fa');
+         updateCookie('NEXT_LOCALE', 'fa');
       }
    };
 
