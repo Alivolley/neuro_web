@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
+// import { useState } from 'react';
+// import { useTranslations } from 'next-intl';
+// import { useParams } from 'next/navigation';
 import Image from 'next/image';
 
 // MUI
-import { Grid, InputLabel, MenuItem, Select, Tab } from '@mui/material';
+import { Grid } from '@mui/material';
+// import { Grid, InputLabel, MenuItem, Select, Tab } from '@mui/material';
 
 // Assets
 import jasminPic from '../../../../assets/images/jasminPicture.png';
@@ -15,15 +16,15 @@ import samplePicture from '../../../../assets/images/sample_picture.png';
 // Components
 import InfoDetail from '../../../components/pages/teamMember-detail/info-detail/info-detail';
 import ProductCard from '../../../components/template/product-card/product-card';
-import RtlProvider from '../../../components/layout/rtlProvider/rtlProvider';
-import { AllProductsSelect, AllProductsTabs } from '../../../allProducts/allProducts.style';
+// import RtlProvider from '../../../components/layout/rtlProvider/rtlProvider';
+// import { AllProductsSelect, AllProductsTabs } from '../../../allProducts/allProducts.style';
 
 function AllProjects() {
-   const [tabsValue, setTabsValue] = useState(0);
-   const [selectValue, setSelectValue] = useState('');
+   // const [tabsValue, setTabsValue] = useState(0);
+   // const [selectValue, setSelectValue] = useState('');
 
-   const { slug, locale } = useParams();
-   const t = useTranslations('allProducts');
+   // const { slug, locale } = useParams();
+   // const t = useTranslations('allProducts');
 
    return (
       <div className="relative mt-3 pb-12 customMd:mt-12">
@@ -55,7 +56,7 @@ function AllProjects() {
                   <p className="mt-1 font-aubrey tracking-[1.5px] text-menuItemColor">UI/UX Designer</p>
                </div>
 
-               <div className="mt-16 flex items-center justify-between border-b-[1px] border-solid border-darkGold">
+               {/* <div className="mt-16 flex items-center justify-between border-b-[1px] border-solid border-darkGold">
                   <div className="text-menuItemColor">
                      <AllProductsTabs
                         value={tabsValue}
@@ -108,8 +109,8 @@ function AllProjects() {
                         </AllProductsSelect>
                      </RtlProvider>
                   </div>
-               </div>
-               <div className="mt-6">
+               </div> */}
+               <div className="mt-12 border-t border-darkGold">
                   <Grid container spacing={4}>
                      <Grid item xs={12} sm={6} lg={4}>
                         <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />

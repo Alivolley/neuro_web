@@ -8,7 +8,6 @@ import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next-intl/link';
-import { toast } from 'react-toastify';
 
 // Assets
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
@@ -35,11 +34,12 @@ function OurTeam() {
    const { locale } = useParams();
    const t = useTranslations('ourTeam');
 
-   const { data: teamMemberData, isLoading: teamMemberIsLoading, error: teamMemberError } = useOurTeam();
+   const { data: teamMemberData, isLoading: teamMemberIsLoading } = useOurTeam();
+
+   // console.log(teamMemberData);
 
    return (
       <OurTeamCard>
-         {teamMemberError && toast.error('an error accrued')}
          <div className="mt-[20px] sm:mt-[110px]">
             <div
                className={`flex flex-wrap text-textColor sm:gap-2 ${
@@ -75,9 +75,7 @@ function OurTeam() {
                         >
                            <p className="text-[10px] capitalize text-titleColor customMd:text-[18px]">{item.full_name}</p>
                            <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">{item.title}</p>
-                           <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">
-                              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.strud amet.
-                           </p>
+                           <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">{item.short_description}</p>
                            <Link href={`/teamMember-detail/${item.id}`}>
                               <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                            </Link>

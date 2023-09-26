@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import axiosInstance from '../../../configs/axiosInstance';
 
-const useOurTeam = () => useSWR('ourTeam', () => axiosInstance('api/accounts/developers/'));
+const useOurTeam = () => useSWR('ourTeam', () => axiosInstance('accounts/developers/'));
 
 export default useOurTeam;
