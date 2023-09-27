@@ -132,7 +132,7 @@ function AllProducts() {
                </RtlProvider>
             </div>
          </div> */}
-         <div className="mt-6">
+         <div className="mt-20">
             {allProductsIsLoading ? (
                <div className="flex h-full w-full items-center justify-center text-goldColor">
                   <CircleLoader color="#CCAA60" size={80} />

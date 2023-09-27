@@ -104,5 +104,8 @@
         "Articles related to backend": "Articles related to backend",
         "Articles related to uiux": "Articles related to uiux",
         "Articles related to all": "All articles"
+    },
+    "search": {
+        "search result of": "search result of"
     }
 }

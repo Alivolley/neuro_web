@@ -3,6 +3,7 @@ import { useParams } from 'next/navigation';
 
 // Intl
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next-intl/client';
 
 // Assets
 import searchButtonIcon from '../../../../assets/icons/searchButtonIcon.svg';
@@ -17,6 +18,7 @@ function HeaderSearch({ closeSearchModalHandler }) {
    const t = useTranslations('searchModal');
    const { locale } = useParams();
    const [ref] = useOnClickOutside(closeSearchModalHandler);
+   const router = useRouter();
 
    const {
       register,
@@ -30,7 +32,8 @@ function HeaderSearch({ closeSearchModalHandler }) {
    });
 
    const searchSubmitHandler = data => {
-      console.log(data);
+      router.push(`/search/${data?.searchValue}`);
+      closeSearchModalHandler();
    };
 
    return (

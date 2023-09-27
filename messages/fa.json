@@ -104,5 +104,8 @@
         "Articles related to backend": "مقالات مربوط به بک اند",
         "Articles related to uiux": "مقالات مربوط به یوآی یوایکس",
         "Articles related to all": "تمامی مقالات"
+    },
+    "search": {
+        "search result of": "نتایج جست و جو برای"
     }
 }
