@@ -51,7 +51,7 @@ function OurTeam() {
             <HeaderTitle>{t('Our team')}</HeaderTitle>
          </div>
 
-         <div className="mt-[120px] h-[270px] overflow-auto customSm:h-[320px] customMd:mt-[30px] customMd:h-[440px]" id="picsWidth">
+         <div className="mt-[90px] h-[270px] overflow-auto customSm:h-[320px] customMd:mt-[30px] customMd:h-[440px]" id="picsWidth">
             {teamMemberIsLoading ? (
                <OurTeamCardSkeleton />
             ) : (
@@ -71,22 +71,30 @@ function OurTeam() {
                                  : 'invisible h-0 w-0 scale-0 opacity-0'
                            }`}
                         >
-                           <p className="text-[10px] capitalize text-titleColor customMd:text-[18px]">{item.full_name}</p>
-                           <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">{item.title}</p>
-                           <p className="mb-9 mt-6 text-[8px] text-textColor customMd:text-[13px]">{item.short_description}</p>
+                           <p className={`capitalize text-titleColor customMd:text-[18px] ${locale === 'fa' ? 'text-xs' : 'text-[10px]'}`}>
+                              {item.full_name}
+                           </p>
+                           <p className={`mt-2 text-textColor customMd:text-[15px] ${locale === 'fa' ? 'text-xs' : 'text-[10px]'}`}>{item.title}</p>
+                           <p className={`mb-9 mt-6 text-textColor customMd:text-[13px] ${locale === 'fa' ? 'text-[10px]' : 'text-[8px]'}`}>
+                              {item.short_description}
+                           </p>
                            <Link href={`/teamMember-detail/${item.id}`}>
                               <ButtonTemplate text={t('See more')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                            </Link>
                         </div>
                         <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
-                           <img src={item.image} alt="team member" className="h-full w-full grayscale" />
+                           <img src={item.image} alt="team member" className="h-full w-full object-cover grayscale customSm:object-fill" />
                            <div
                               className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
                                  activeSlide !== index + 1 ? 'visible opacity-100' : 'invisible opacity-0'
                               }`}
                            >
-                              <p className="text-[10px] text-titleColor customMd:text-[18px]">{item.full_name}</p>
-                              <p className="mt-2 text-[10px] text-textColor customMd:text-[15px]">{item.title}</p>
+                              <p className={`text-titleColor customMd:text-[18px] ${locale === 'fa' ? 'text-xs' : 'text-[10px]'}`}>
+                                 {item.full_name}
+                              </p>
+                              <p className={`mt-2 text-textColor customMd:text-[15px] ${locale === 'fa' ? 'text-xs' : 'text-[10px]'}`}>
+                                 {item.title}
+                              </p>
                            </div>
                         </div>
                      </div>
