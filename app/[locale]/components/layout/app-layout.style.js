@@ -11,6 +11,7 @@ const AppLayoutStyle = styled.div(({ currentLocale, theme }) => ({
    backgroundRepeat: 'no-repeat',
    backgroundSize: 'cover',
    backgroundAttachment: 'fixed',
+   backgroundColor: '#0C0D0C',
    minHeight: '100lvh',
    padding: '0 32px',
 
