@@ -87,9 +87,8 @@ function TabSection({ detail }) {
                                  firstSubPic={item?.picture_2}
                                  secondSubPic={item?.picture_3}
                                  thirdSubPic={item?.picture_4}
-                                 productId={item?.id}
-                                 userId={detail?.user?.id}
                                  title={item?.title}
+                                 href={`/personal-project-detail/${detail?.user?.id}/${item?.id}`}
                               />
                            </Grid>
                         )

@@ -1,18 +1,15 @@
 import Link from 'next-intl/link';
+import { useParams } from 'next/navigation';
 
 // MUI
 import { Grid } from '@mui/material';
-import { useParams } from 'next/navigation';
 
-function ProductCard({ bigPic, firstSubPic, secondSubPic, thirdSubPic, userId, productId, title }) {
+function ProductCard({ bigPic, firstSubPic, secondSubPic, thirdSubPic, href = '/', title }) {
    const { locale } = useParams();
 
    return (
       <div className="mx-auto w-full max-w-[325px]">
-         <Link
-            href="/"
-            // href={`/product-detail/${hrefId}`}
-         >
+         <Link href={href}>
             <Grid container spacing={0.5}>
                <Grid item xs={12}>
                   <div className="aspect-video w-full">

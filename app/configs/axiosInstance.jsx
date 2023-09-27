@@ -17,7 +17,7 @@ axiosInstance.interceptors.response.use(
    res => res,
    error => {
       console.log(error);
-      toast.error(error.message);
+      toast.error('an error accrued');
       return Promise.reject(error);
    }
 );

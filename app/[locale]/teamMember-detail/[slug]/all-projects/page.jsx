@@ -27,8 +27,6 @@ function AllProjects() {
 
    const { data: teamMemberData, isLoading: teamMemberIsLoading } = useTeamMemberDetail(slug);
 
-   console.log(teamMemberData);
-
    return (
       <div className="relative mt-3 pb-12 customMd:mt-12">
          <Grid container columnSpacing={8} rowSpacing={3}>
@@ -146,9 +144,8 @@ function AllProjects() {
                                     firstSubPic={item?.picture_2}
                                     secondSubPic={item?.picture_3}
                                     thirdSubPic={item?.picture_4}
-                                    productId={item?.id}
-                                    userId={teamMemberData?.user?.id}
                                     title={item?.title}
+                                    href={`/personal-project-detail/${teamMemberData?.user?.id}/${item?.id}`}
                                  />
                               </Grid>
                            ))}

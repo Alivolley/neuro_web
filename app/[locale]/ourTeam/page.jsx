@@ -36,8 +36,6 @@ function OurTeam() {
 
    const { data: teamMemberData, isLoading: teamMemberIsLoading } = useOurTeam();
 
-   // console.log(teamMemberData);
-
    return (
       <OurTeamCard>
          <div className="mt-[20px] sm:mt-[110px]">
