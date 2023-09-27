@@ -12,25 +12,25 @@ function ProductCard({ bigPic, firstSubPic, secondSubPic, thirdSubPic, href = '/
          <Link href={href}>
             <Grid container spacing={0.5}>
                <Grid item xs={12}>
-                  <div className="aspect-video w-full">
-                     <img src={bigPic} alt="product" className="h-full w-full" />
+                  <div className="aspect-video w-full bg-gray-700">
+                     <img src={bigPic} alt="product" className="h-full w-full object-cover" />
                   </div>
                </Grid>
                <Grid item xs={12}>
                   <div className="flex gap-1">
                      {firstSubPic && (
-                        <div className="h-16 grow">
-                           <img src={firstSubPic} alt="product" className="h-full w-full" />
+                        <div className="h-16 grow bg-gray-700">
+                           <img src={firstSubPic} alt="product" className="h-full w-full object-cover" />
                         </div>
                      )}
                      {secondSubPic && (
-                        <div className="h-16 grow">
-                           <img src={secondSubPic} alt="product" className="h-full w-full" />
+                        <div className="h-16 grow bg-gray-700">
+                           <img src={secondSubPic} alt="product" className="h-full w-full object-cover" />
                         </div>
                      )}
                      {thirdSubPic && (
-                        <div className="h-16 grow">
-                           <img src={thirdSubPic} alt="product" className="h-full w-full" />
+                        <div className="h-16 grow bg-gray-700">
+                           <img src={thirdSubPic} alt="product" className="h-full w-full object-cover" />
                         </div>
                      )}
                   </div>

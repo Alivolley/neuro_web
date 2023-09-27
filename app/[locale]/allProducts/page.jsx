@@ -1,26 +1,29 @@
 'use client';
 
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { CircleLoader } from 'react-spinners';
 
 // MUI
-import { Grid, InputLabel, MenuItem, Select, Tab } from '@mui/material';
+import { Grid } from '@mui/material';
+// import { Grid, InputLabel, MenuItem, Select, Tab } from '@mui/material';
 
 // Assets
-import { AllProductsSelect, AllProductsTabs } from './allProducts.style';
-import samplePicture from '../../assets/images/sample_picture.png';
+// import { AllProductsSelect, AllProductsTabs } from './allProducts.style';
 
 // Components
 import ProductCard from '../components/template/product-card/product-card';
-import RtlProvider from '../components/layout/rtlProvider/rtlProvider';
+import useProducts from '../apis/useProducts/useProducts';
+// import RtlProvider from '../components/layout/rtlProvider/rtlProvider';
 
 function AllProducts() {
-   const [tabsValue, setTabsValue] = useState(0);
-   const [selectValue, setSelectValue] = useState('');
+   // const [tabsValue, setTabsValue] = useState(0);
+   // const [selectValue, setSelectValue] = useState('');
 
    const t = useTranslations('allProducts');
    const { locale } = useParams();
+
+   const { data: allProductsData, isLoading: allProductsIsLoading } = useProducts();
 
    return (
       <div>
@@ -75,7 +78,7 @@ function AllProducts() {
             </div>
          </div>
 
-         <div className="mt-16 flex items-center justify-between border-b-[1px] border-solid border-darkGold">
+         {/* <div className="mt-16 flex items-center justify-between border-b-[1px] border-solid border-darkGold">
             <div className="text-menuItemColor">
                <AllProductsTabs
                   value={tabsValue}
@@ -128,28 +131,28 @@ function AllProducts() {
                   </AllProductsSelect>
                </RtlProvider>
             </div>
-         </div>
+         </div> */}
          <div className="mt-6">
-            <Grid container spacing={4}>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
+            {allProductsIsLoading ? (
+               <div className="flex h-full w-full items-center justify-center text-goldColor">
+                  <CircleLoader color="#CCAA60" size={80} />
+               </div>
+            ) : (
+               <Grid container spacing={4}>
+                  {allProductsData?.result?.map(item => (
+                     <Grid item xs={12} sm={6} lg={4} key={item.id}>
+                        <ProductCard
+                           bigPic={item.pictures[0]}
+                           firstSubPic={item.pictures[1]}
+                           secondSubPic={item.pictures[2]}
+                           thirdSubPic={item.pictures[3]}
+                           href={`/product-detail/${item.id}`}
+                           title={item.title}
+                        />
+                     </Grid>
+                  ))}
                </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-               <Grid item xs={12} md={6} lg={4}>
-                  <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-               </Grid>
-            </Grid>
+            )}
          </div>
       </div>
    );

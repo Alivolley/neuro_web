@@ -6,22 +6,25 @@ import { useTranslations } from 'next-intl';
 
 // Assets
 import { Grid } from '@mui/material';
+import { CircleLoader } from 'react-spinners';
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
-import samplePicture from '../../assets/images/sample_picture.png';
 
 // MUI
 import HeaderTitle from '../components/template/header-title/header-title';
 import BorderedText from '../components/template/bordered-text/bordered-text';
 import ButtonTemplate from '../components/form-group/button-template/button-template';
 import ProductCard from '../components/template/product-card/product-card';
+import useProducts from '../apis/useProducts/useProducts';
 
 function PageSome() {
    const { locale } = useParams();
    const t = useTranslations('products');
 
+   const { data: allProductsData, isLoading: allProductsIsLoading } = useProducts();
+
    return (
-      <div className="z-[2] mt-[20px] sm:mt-[110px]">
+      <div className="z-[2] mt-[20px] pb-32 sm:mt-[110px]">
          <Grid container spacing={{ xs: 5, lg: 4 }}>
             <Grid item xs={12} lg={5}>
                <div>
@@ -48,20 +51,29 @@ function PageSome() {
                </div>
             </Grid>
             <Grid item xs={12} lg={7}>
-               <Grid container spacing={4}>
-                  <Grid item xs={12} md={6}>
-                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
+               {allProductsIsLoading ? (
+                  <div className="flex h-full w-full items-center justify-center text-goldColor">
+                     <CircleLoader color="#CCAA60" size={80} />
+                  </div>
+               ) : (
+                  <Grid container spacing={4}>
+                     {allProductsData?.result?.map(
+                        (item, index) =>
+                           index < 4 && (
+                              <Grid item xs={12} md={6} key={item.id}>
+                                 <ProductCard
+                                    bigPic={item.pictures[0]}
+                                    firstSubPic={item.pictures[1]}
+                                    secondSubPic={item.pictures[2]}
+                                    thirdSubPic={item.pictures[3]}
+                                    href={`/product-detail/${item.id}`}
+                                    title={item.title}
+                                 />
+                              </Grid>
+                           )
+                     )}
                   </Grid>
-                  <Grid item xs={12} md={6}>
-                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                     <ProductCard bigPic={samplePicture} firstSubPic={samplePicture} secondSubPic={samplePicture} thirdSubPic={samplePicture} />
-                  </Grid>
-               </Grid>
+               )}
             </Grid>
          </Grid>
       </div>
