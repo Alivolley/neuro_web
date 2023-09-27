@@ -12,6 +12,7 @@ module.exports = {
          backgroundImage: {
             'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
             'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            localeGradient: 'linear-gradient(90deg, rgba(63,68,54,1) 32%, rgba(176,206,184,1) 100%)',
          },
          colors: {
             textColor: '#A0ACB1',

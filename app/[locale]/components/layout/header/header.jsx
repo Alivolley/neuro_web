@@ -105,7 +105,7 @@ function Header({ currentLocale }) {
                   <Link href={detectedRoute || '/'} locale={currentLocale === 'fa' ? 'en' : 'fa'} onClick={changeLocaleCookie}>
                      <div className="hidden items-center justify-center gap-[6px] customMd:flex">
                         <p className={`font-picoopicRegular ${locale === 'en' ? 'text-[#3F4436]' : ''}`}>فارسی</p>
-                        <span className="h-[2px] w-6 bg-menuItemColor" />
+                        <span className="h-[2px] w-6 bg-localeGradient" />
                         <p className={`${locale === 'fa' ? 'text-[#3F4436]' : ''}`}>EN</p>
                      </div>
                      <p className="font-picoopicRegular customMd:hidden">{currentLocale === 'fa' ? 'EN' : 'فارسی'}</p>
