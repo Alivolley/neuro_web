@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'next/navigation';
 
@@ -66,12 +64,12 @@ function HeaderSearch({ closeSearchModalHandler }) {
                className={`flex flex-col items-center gap-5 font-avgardn text-textColor sm:flex-row ${locale === 'fa' ? 'font-picoopicRegular' : ''}`}
             >
                <p>{t('Other ways to search')} : </p>
-               <Link href="/" className="underline">
-                  {t('Instagram')}
-               </Link>
-               <Link href="/" className="underline">
+               <a href="https://t.me/Alivolley" target="_blank" className="underline" rel="noreferrer">
+                  {t('Telegram')}
+               </a>
+               <a href="https://www.linkedin.com/in/ali-azghandi-91781a27a/" target="_blank" className="underline" rel="noreferrer">
                   {t('Linkedin')}
-               </Link>
+               </a>
             </div>
          </div>
       </HeaderSearchStyle>
