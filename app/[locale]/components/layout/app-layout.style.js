@@ -11,7 +11,7 @@ const AppLayoutStyle = styled.div(({ currentLocale, theme }) => ({
    backgroundRepeat: 'no-repeat',
    backgroundSize: 'cover',
    backgroundAttachment: 'fixed',
-   minHeight: '100vh',
+   minHeight: '100lvh',
    padding: '0 32px',
 
    '@media (min-width: 900px)': {

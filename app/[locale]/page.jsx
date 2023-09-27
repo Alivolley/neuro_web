@@ -77,7 +77,7 @@ export default function Home() {
                            <BorderedText>{t('describeUiUx')}</BorderedText>
                         </div>
 
-                        <Link href="/">
+                        <Link href="/ourTeam">
                            <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                         </Link>
                      </div>
@@ -115,7 +115,7 @@ export default function Home() {
                            <BorderedText>{t('describeFront')}</BorderedText>
                         </div>
 
-                        <Link href="/">
+                        <Link href="/ourTeam">
                            <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                         </Link>
                      </div>
@@ -153,7 +153,7 @@ export default function Home() {
                            <BorderedText>{t('describeBack')}</BorderedText>
                         </div>
 
-                        <Link href="/">
+                        <Link href="/ourTeam">
                            <ButtonTemplate text={t('more info')} icon={locale === 'fa' ? arrowIconReverse : arrowIcon} />
                         </Link>
                      </div>
