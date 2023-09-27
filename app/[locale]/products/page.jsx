@@ -41,7 +41,7 @@ function PageSome() {
                      <HeaderTitle>{t('Our products')}</HeaderTitle>
                   </div>
 
-                  <div className="mb-[90px] mt-[100px]">
+                  <div className="mb-[50px] mt-[100px]">
                      <BorderedText>{t('Our product description')}</BorderedText>
                   </div>
 

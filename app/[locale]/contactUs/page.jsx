@@ -8,6 +8,11 @@ import Image from 'next/image';
 // MUI
 import { Grid } from '@mui/material';
 
+// Icons
+import TelegramIcon from '@mui/icons-material/Telegram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
 // assets
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
@@ -19,8 +24,6 @@ import HeaderTitle from '../components/template/header-title/header-title';
 import InputComponent from '../components/form-group/input-component/input-component';
 import ButtonTemplate from '../components/form-group/button-template/button-template';
 import TextareaComponent from '../components/form-group/textarea-component/textarea-component';
-
-// MUI
 
 function ContactUs() {
    const t = useTranslations('contactUs');
@@ -153,10 +156,7 @@ function ContactUs() {
                   <div className="rounded-[5px] bg-[#101211] p-2 text-[13px] customSm:p-5">
                      <div className="flex flex-wrap gap-12">
                         <div className="flex items-center gap-4">
-                           <div
-                              className="flex h-[62px] w-[62px] items-center justify-center 
-                                        rounded-full border-[1px] border-solid border-textColor"
-                           >
+                           <div className="flex h-[62px] w-[62px] items-center justify-center rounded-full border-[1px] border-solid border-textColor">
                               <Image src={phoneIcon} alt="contact icon" />
                            </div>
                            <div>
@@ -166,15 +166,16 @@ function ContactUs() {
                         </div>
 
                         <div className="flex items-center gap-4">
-                           <div
-                              className="flex h-[62px] w-[62px] items-center justify-center 
-                                        rounded-full border-[1px] border-solid border-textColor"
-                           >
+                           <div className="flex h-[62px] w-[62px] items-center justify-center rounded-full border-[1px] border-solid border-textColor">
                               <Image src={mailBox} alt="contact icon" />
                            </div>
                            <div>
                               <p className="text-titleColor">{t('Email us')} :</p>
-                              <p className="text-[10px] text-textColor customSm:text-[13px]">alicryptovolley@gmail.com</p>
+                              <p
+                                 className={`text-textColor ${locale === 'fa' ? 'text-[13px] customSm:text-sm' : 'text-[10px] customSm:text-[13px]'}`}
+                              >
+                                 alicryptovolley@gmail.com
+                              </p>
                            </div>
                         </div>
                      </div>
@@ -184,24 +185,30 @@ function ContactUs() {
                   <div className="flex flex-wrap items-center gap-8 rounded-[5px] bg-[#101211] p-2 text-[13px] customSm:p-5">
                      <p className="text-titleColor">{t('Other ways')}</p>
                      <div className="flex flex-wrap items-center justify-center gap-8">
-                        <div
-                           className="flex h-[62px] w-[62px] items-center justify-center 
-                                        rounded-full border-[1px] border-solid border-textColor"
+                        <a
+                           href="https://t.me/Alivolley"
+                           target="_blank"
+                           className="flex h-[62px] w-[62px] items-center justify-center rounded-full border-[1px] border-solid border-textColor"
+                           rel="noreferrer"
                         >
-                           <Image src={mailBox} alt="contact icon" />
-                        </div>
-                        <div
-                           className="flex h-[62px] w-[62px] items-center justify-center 
-                                        rounded-full border-[1px] border-solid border-textColor"
+                           <TelegramIcon color="menuItemColor" fontSize="medium" />
+                        </a>
+                        <a
+                           href="https://www.linkedin.com/in/ali-azghandi-91781a27a/"
+                           target="_blank"
+                           className="flex h-[62px] w-[62px] items-center justify-center rounded-full border-[1px] border-solid border-textColor"
+                           rel="noreferrer"
                         >
-                           <Image src={mailBox} alt="contact icon" />
-                        </div>
-                        <div
-                           className="flex h-[62px] w-[62px] items-center justify-center 
-                                        rounded-full border-[1px] border-solid border-textColor"
+                           <LinkedInIcon color="menuItemColor" fontSize="medium" />
+                        </a>
+                        <a
+                           href="https://wa.link/j2zuz4"
+                           target="_blank"
+                           className="flex h-[62px] w-[62px] items-center justify-center rounded-full border-[1px] border-solid border-textColor"
+                           rel="noreferrer"
                         >
-                           <Image src={mailBox} alt="contact icon" />
-                        </div>
+                           <WhatsAppIcon color="menuItemColor" fontSize="medium" />
+                        </a>
                      </div>
                   </div>
                </Grid>
