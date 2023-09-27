@@ -19,7 +19,7 @@ function AllArticles() {
    const { data: allArticlesData, isLoading: allArticlesIsLoading } = useArticles(slug === 'all' ? null : slug);
 
    return (
-      <div>
+      <div className="pb-20">
          <p className={`mt-12 text-lg text-textColor customMd:text-2xl ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
             {t('articles title')}
          </p>

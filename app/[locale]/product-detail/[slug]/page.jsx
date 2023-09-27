@@ -28,7 +28,7 @@ function ChosenProduct() {
    const { data: productDetailData, isLoading: productDetailIsLoading } = useProductDetail(slug);
 
    return (
-      <div className={`mt-12 ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1.5px]'}`}>
+      <div className={`mt-12 pb-20 ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1.5px]'}`}>
          {productDetailIsLoading ? (
             <div className="flex h-full w-full items-center justify-center text-goldColor">
                <CircleLoader color="#CCAA60" size={80} />

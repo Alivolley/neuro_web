@@ -26,7 +26,7 @@ function AllProducts() {
    const { data: allProductsData, isLoading: allProductsIsLoading } = useProducts();
 
    return (
-      <div>
+      <div className="pb-14">
          <div className={`bg-buttonBgColor ${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[2px]'}`}>
             <div className="px-[25px] py-[20px]">
                <Grid container spacing={{ xs: 5, lg: '100px' }}>
