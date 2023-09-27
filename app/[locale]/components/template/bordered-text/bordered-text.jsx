@@ -6,7 +6,7 @@ function BorderedText({ children }) {
    return (
       <div className="relative">
          <p
-            className={`mx-1 text-[10px] text-textColor sm:text-[14px] ${
+            className={`mx-1 text-[12px] text-textColor sm:text-[14px] ${
                locale === 'fa' ? 'font-picoopicRegular leading-9' : 'font-aubrey leading-7 tracking-[3px]'
             }`}
          >

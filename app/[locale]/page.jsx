@@ -73,7 +73,7 @@ export default function Home() {
                            <HeaderTitle>{t('ui_ux design')}</HeaderTitle>
                         </div>
 
-                        <div className="mb-[90px] mt-[120px]">
+                        <div className="mb-10 mt-20 customSm:mb-[90px] customSm:mt-[120px]">
                            <BorderedText>{t('describeUiUx')}</BorderedText>
                         </div>
 
