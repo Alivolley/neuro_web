@@ -2,20 +2,21 @@
 
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { CircleLoader } from 'react-spinners';
 
 // MUI
 import { Grid } from '@mui/material';
 
-// assets
-import samplePicture from '../../../assets/images/sample_picture.png';
-
 // Components
 import HeaderTitle from '../../components/template/header-title/header-title';
 import ArticleCard from '../../components/template/article-card/article-card';
+import useArticles from '../../apis/useArticles/useArticles';
 
 function AllArticles() {
    const { locale, slug } = useParams();
    const t = useTranslations('articles');
+
+   const { data: allArticlesData, isLoading: allArticlesIsLoading } = useArticles(slug === 'all' ? null : slug);
 
    return (
       <div>
@@ -26,105 +27,25 @@ function AllArticles() {
             <HeaderTitle>{t(`Articles related to ${slug}`)}</HeaderTitle>
          </div>
 
-         <div className="mt-28">
-            <Grid container spacing={4}>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque it. Debitis blanditiis velit, neque id molestiae illum doloremque  accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
+         <div className="mt-28 border-t border-darkGold pt-10">
+            {allArticlesIsLoading ? (
+               <div className="flex h-full w-full items-center justify-center text-goldColor">
+                  <CircleLoader color="#CCAA60" size={80} />
+               </div>
+            ) : (
+               <Grid container spacing={4}>
+                  {allArticlesData?.result?.map(item => (
+                     <Grid item xs={12} sm={6} lg={4} key={item.id}>
+                        <ArticleCard
+                           title={item.title}
+                           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque it. Debitis blanditiis velit, neque id molestiae illum doloremque  accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
+                           cover={item.image}
+                           id={item.id}
+                        />
+                     </Grid>
+                  ))}
                </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="عنوان یک مقاله"
-                     description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه  فاده از طراحان گرافیک است چاپگرها و متون بلکه  روزنامه و مجله در ستون و سطرآنچنان که لازم است"
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-               <Grid item xs={12} sm={6} lg={4}>
-                  <ArticleCard
-                     title="title of article"
-                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                     cover={samplePicture}
-                     id={1}
-                  />
-               </Grid>
-            </Grid>
+            )}
          </div>
       </div>
    );
