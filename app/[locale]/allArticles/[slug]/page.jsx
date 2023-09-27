@@ -36,12 +36,7 @@ function AllArticles() {
                <Grid container spacing={4}>
                   {allArticlesData?.result?.map(item => (
                      <Grid item xs={12} sm={6} lg={4} key={item.id}>
-                        <ArticleCard
-                           title={item.title}
-                           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis blanditiis velit, neque id molestiae illum doloremque it. Debitis blanditiis velit, neque id molestiae illum doloremque  accusantium nobis minus illo cumque, facilis magnam sint quibusdam aut sunt voluptatum alias reiciendis."
-                           cover={item.image}
-                           id={item.id}
-                        />
+                        <ArticleCard title={item.title} description={item.short_description} cover={item.image} id={item.id} />
                      </Grid>
                   ))}
                </Grid>

@@ -10,8 +10,6 @@ function PersonalProjectDetail() {
 
    const { data: teamMemberProjectData, isLoading: teamMemberProjectIsLoading } = useTeamMemberProjectDetail(projectId, teamMember);
 
-   console.log(teamMemberProjectData);
-
    return (
       <div className="relative">
          {teamMemberProjectIsLoading ? (
@@ -20,19 +18,19 @@ function PersonalProjectDetail() {
             </div>
          ) : (
             <div className="text-menuItemColor">
+               <div className="flex">
+                  <div className="max-w-xs">
+                     <img src={teamMemberProjectData?.user?.image} alt="profile" className="h-full w-full" />
+                  </div>
+                  <p>{teamMemberProjectData?.user?.full_name}</p>
+                  <p>{teamMemberProjectData?.user?.title}</p>
+               </div>
                <div className="flex gap-2">
-                  <div className="grow">
-                     <img src={teamMemberProjectData?.picture_1} alt="" className="w-full" />
-                  </div>
-                  <div className="grow">
-                     <img src={teamMemberProjectData?.picture_2} alt="" className="w-full" />
-                  </div>
-                  <div className="grow">
-                     <img src={teamMemberProjectData?.picture_3} alt="" className="w-full" />
-                  </div>
-                  <div className="grow">
-                     <img src={teamMemberProjectData?.picture_4} alt="" className="w-full" />
-                  </div>
+                  {teamMemberProjectData?.pictures?.map(item => (
+                     <div className="grow" key={item}>
+                        <img src={item} alt="project" className="w-full" />
+                     </div>
+                  ))}
                </div>
                <p>{teamMemberProjectData?.title}</p>
                <p>{teamMemberProjectData?.description}</p>

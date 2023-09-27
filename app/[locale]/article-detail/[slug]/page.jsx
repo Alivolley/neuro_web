@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { CircleLoader } from 'react-spinners';
+import * as DOMPurify from 'dompurify';
 
 // Hooks
 import useArticleDetail from '../../apis/useArticleDetail/useArticleDetail';
@@ -10,8 +11,6 @@ function ArticleDetail() {
    const { slug, locale } = useParams();
 
    const { data: articleDetailData, isLoading: articleDetailIsLoading } = useArticleDetail(slug);
-
-   console.log(articleDetailData);
 
    return (
       <div className="relative text-menuItemColor">
@@ -30,6 +29,10 @@ function ArticleDetail() {
                   <p>نویسنده : {articleDetailData?.author?.full_name}</p>
                   <p>تعداد بازدید : {articleDetailData?.views}</p>
                </div>
+               <br />
+               <br />
+               <br />
+               <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(articleDetailData?.content) }} />
             </>
          )}
       </div>
