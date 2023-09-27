@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import axiosInstance from '../../../configs/axiosInstance';
 
 const useArticles = category =>
-   useSWR(`teamMemberProjectDetail-${useArticles}`, () =>
+   useSWR(`articles-${category}`, () =>
       axiosInstance(`articles/list/`, {
          params: {
             ...(category && {
