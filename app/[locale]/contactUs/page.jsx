@@ -24,6 +24,7 @@ import HeaderTitle from '../components/template/header-title/header-title';
 import InputComponent from '../components/form-group/input-component/input-component';
 import ButtonTemplate from '../components/form-group/button-template/button-template';
 import TextareaComponent from '../components/form-group/textarea-component/textarea-component';
+import axiosInstance from '../../configs/axiosInstance';
 
 function ContactUs() {
    const t = useTranslations('contactUs');
@@ -35,17 +36,19 @@ function ContactUs() {
       formState: { errors },
    } = useForm({
       defaultValues: {
-         username: '',
-         phoneNumber: '',
+         name: '',
+         phone_number: '',
          email: '',
          service: '',
-         description: '',
+         message: '',
       },
       mode: 'onSubmit',
    });
 
    const formSubmit = data => {
       console.log(data);
+
+      axiosInstance.post('accounts/contact_us/', data);
    };
 
    return (
@@ -65,14 +68,14 @@ function ContactUs() {
                                         border-menuItemColor bg-transparent py-4 text-[12px] 
                                         tracking-[1.5px] text-textColor placeholder:text-[10px] customSm:text-[16px] customSm:placeholder:text-[13px]"
                               detail={{
-                                 ...register('username', {
+                                 ...register('name', {
                                     required: {
                                        value: true,
                                        message: t('this filed is required'),
                                     },
                                  }),
                               }}
-                              error={errors.username}
+                              error={errors.name}
                            />
                         </Grid>
                         <Grid item xs={12} md={6}>
@@ -82,14 +85,14 @@ function ContactUs() {
                                         border-menuItemColor bg-transparent py-4 text-[12px] 
                                         tracking-[1.5px] text-textColor placeholder:text-[10px] customSm:text-[16px] customSm:placeholder:text-[13px]"
                               detail={{
-                                 ...register('phoneNumber', {
+                                 ...register('phone_number', {
                                     required: {
                                        value: true,
                                        message: t('this filed is required'),
                                     },
                                  }),
                               }}
-                              error={errors.phoneNumber}
+                              error={errors.phone_number}
                            />
                         </Grid>
                         <Grid item xs={12} md={6}>
@@ -116,12 +119,7 @@ function ContactUs() {
                                         border-menuItemColor bg-transparent py-4 text-[12px] 
                                         tracking-[1.5px] text-textColor placeholder:text-[10px] customSm:text-[16px] customSm:placeholder:text-[13px]"
                               detail={{
-                                 ...register('service', {
-                                    required: {
-                                       value: true,
-                                       message: t('this filed is required'),
-                                    },
-                                 }),
+                                 ...register('service'),
                               }}
                               error={errors.service}
                            />
@@ -133,14 +131,14 @@ function ContactUs() {
                               rows="5"
                               placeholder={t('message')}
                               detail={{
-                                 ...register('description', {
+                                 ...register('message', {
                                     required: {
                                        value: true,
                                        message: t('this filed is required'),
                                     },
                                  }),
                               }}
-                              error={errors.description}
+                              error={errors.message}
                            />
                         </Grid>
                      </Grid>
