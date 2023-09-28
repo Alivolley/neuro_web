@@ -14,6 +14,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 // assets
+import { toast } from 'react-toastify';
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 import arrowIconReverse from '../../assets/icons/arrowIconReverse.svg';
 import mailBox from '../../assets/icons/mailBox.svg';
@@ -34,6 +35,7 @@ function ContactUs() {
       register,
       handleSubmit,
       formState: { errors },
+      reset,
    } = useForm({
       defaultValues: {
          name: '',
@@ -46,9 +48,10 @@ function ContactUs() {
    });
 
    const formSubmit = data => {
-      console.log(data);
-
-      axiosInstance.post('accounts/contact_us/', data);
+      axiosInstance.post('accounts/contact_us/', data).then(() => {
+         toast.success('با موفقیت ارسال شد');
+         reset();
+      });
    };
 
    return (
