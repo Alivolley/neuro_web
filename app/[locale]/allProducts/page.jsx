@@ -51,8 +51,8 @@ function AllProducts() {
                   <Grid item xs={12} sm={6} lg={3}>
                      <div className="relative">
                         <p className="text-titleColor">{t('second title')}</p>
-                        <p className="mt-6 text-[14px] uppercase leading-8 text-textColor">contact@diacara.com</p>
-                        <p className="text-textColor">+0 123 654 78910 </p>
+                        <p className={`mt-6 leading-8 text-textColor ${locale === 'fa' ? 'text-base' : 'text-sm'}`}>alicryptovolley@gmail.com</p>
+                        <p className="text-textColor">09383935719</p>
                         <div
                            className={`absolute bottom-0 w-[90px] bg-[#3A4553] customSm:inset-y-0 customSm:w-[1px] ${
                               locale === 'fa'
@@ -70,8 +70,8 @@ function AllProducts() {
                   <Grid item xs={12} sm={6} lg={3}>
                      <div>
                         <p className="text-titleColor">{t('third title')}</p>
-                        <p className="mt-6 text-[14px] uppercase leading-8 text-textColor">contact@diacara.com</p>
-                        <p className="text-textColor">+0 123 654 78910 </p>
+                        <p className={`mt-6 leading-8 text-textColor ${locale === 'fa' ? 'text-sm' : 'text-xs'}`}>javad.programmer100@gmail.com</p>
+                        <p className="text-textColor">09908227202</p>
                      </div>
                   </Grid>
                </Grid>
