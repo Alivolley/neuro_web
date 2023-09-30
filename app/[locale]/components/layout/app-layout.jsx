@@ -25,6 +25,7 @@ function AppLayout({ children, currentLocale }) {
       pathname.endsWith('/allProducts') ||
       /\/product-detail\/(.+)/.test(pathname) ||
       /\/allArticles\/(.+)/.test(pathname) ||
+      /\/article-detail\/(.+)/.test(pathname) ||
       pathname.endsWith('/contactUs') ||
       pathname.endsWith('/articles');
 

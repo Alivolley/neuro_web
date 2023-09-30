@@ -108,5 +108,15 @@
     },
     "search": {
         "search result of": "search result of"
+    },
+    "articleDetail": {
+        "frontend": "frontend",
+        "backend": "backend",
+        "all": "all",
+        "ui ux": "ui ux",
+        "latest": "the latest Articles",
+        "categories": "categories",
+        "all articles": "all articles",
+        "related articles": "related articles"
     }
 }

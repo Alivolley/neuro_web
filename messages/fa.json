@@ -108,5 +108,15 @@
     },
     "search": {
         "search result of": "نتایج جست و جو برای"
+    },
+    "articleDetail": {
+        "frontend": "فرانت اند",
+        "backend": "بک اند",
+        "all": "همه",
+        "ui ux": "یو آی یو ایکس",
+        "latest": "جدید ترین مقالات",
+        "categories": "دسته بندی ها",
+        "all articles": "همه ی مقالات",
+        "related articles": "مقالات مشابه"
     }
 }
