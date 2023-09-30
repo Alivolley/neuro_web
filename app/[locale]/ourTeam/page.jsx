@@ -83,7 +83,7 @@ function OurTeam() {
                            </Link>
                         </div>
                         <div className="relative h-full w-[150px] customSm:w-[220px] customMd:w-[250px]">
-                           <img src={item.image} alt="team member" className="h-full w-full object-cover grayscale customSm:object-fill" />
+                           <img src={item.image} alt="team member" className="h-full w-full object-cover grayscale" />
                            <div
                               className={`absolute inset-x-0 bottom-0 flex flex-col items-center bg-[#101211] px-1 py-4 transition-all duration-200 ${
                                  activeSlide !== index + 1 ? 'visible opacity-100' : 'invisible opacity-0'

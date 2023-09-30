@@ -89,6 +89,7 @@ function ContactUs() {
                         </Grid>
                         <Grid item xs={12} md={6}>
                            <InputComponent
+                              disabled={isMutating}
                               placeholder={t('phone number')}
                               className="mb-1 w-full max-w-[442px] border-b border-solid
                                         border-menuItemColor bg-transparent py-4 text-[12px] 
@@ -106,6 +107,7 @@ function ContactUs() {
                         </Grid>
                         <Grid item xs={12} md={6}>
                            <InputComponent
+                              disabled={isMutating}
                               placeholder={t('email')}
                               className="mb-1 w-full max-w-[442px] border-b border-solid
                                         border-menuItemColor bg-transparent py-4 text-[12px] 
@@ -123,6 +125,7 @@ function ContactUs() {
                         </Grid>
                         <Grid item xs={12} md={6}>
                            <InputComponent
+                              disabled={isMutating}
                               placeholder={t('service')}
                               className="mb-1 w-full max-w-[442px] border-b border-solid
                                         border-menuItemColor bg-transparent py-4 text-[12px] 
@@ -135,6 +138,7 @@ function ContactUs() {
                         </Grid>
                         <Grid item xs={12}>
                            <TextareaComponent
+                              disabled={isMutating}
                               className="mb-1 mt-5 w-full gap-[1.5px] border-[1px] border-solid border-menuItemColor bg-transparent
                                         p-4 text-[12px] text-textColor placeholder:text-[10px] customSm:text-[16px] customSm:placeholder:text-[13px]"
                               rows="5"
