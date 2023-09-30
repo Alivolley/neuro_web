@@ -25,7 +25,9 @@ import HeaderTitle from '../components/template/header-title/header-title';
 import InputComponent from '../components/form-group/input-component/input-component';
 import ButtonTemplate from '../components/form-group/button-template/button-template';
 import TextareaComponent from '../components/form-group/textarea-component/textarea-component';
-import axiosInstance from '../../configs/axiosInstance';
+
+// Hooks
+import useContactUs from '../apis/useContactUs/useContactUs';
 
 function ContactUs() {
    const t = useTranslations('contactUs');
@@ -47,10 +49,14 @@ function ContactUs() {
       mode: 'onSubmit',
    });
 
+   const { trigger, isMutating } = useContactUs();
+
    const formSubmit = data => {
-      axiosInstance.post('accounts/contact_us/', data).then(() => {
-         toast.success('با موفقیت ارسال شد');
-         reset();
+      trigger(data, {
+         onSuccess: () => {
+            toast.success('با موفقیت ارسال شد');
+            reset();
+         },
       });
    };
 
@@ -150,6 +156,7 @@ function ContactUs() {
                         icon={locale === 'fa' ? arrowIconReverse : arrowIcon}
                         type="submit"
                         className="!ms-auto w-full !text-[#757A4F] customSm:w-fit"
+                        loading={isMutating}
                      />
                   </form>
                </Grid>

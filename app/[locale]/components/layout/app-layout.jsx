@@ -36,7 +36,7 @@ function AppLayout({ children, currentLocale }) {
                {!notShowBox && <div id="left_box" />}
                <Header currentLocale={currentLocale} />
                {children}
-               <ToastContainer theme="dark" />
+               <ToastContainer theme="dark" toastClassName={`${locale === 'fa' ? 'font-picoopicRegular' : 'font-aubrey tracking-[1.5px]'}`} />
             </AppLayoutStyle>
          </ThemeProvider>
       </Provider>

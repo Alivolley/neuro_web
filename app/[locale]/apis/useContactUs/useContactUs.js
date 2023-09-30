@@ -1,6 +1,6 @@
-import useSWR from 'swr';
+import useSWRMutation from 'swr/mutation';
 import axiosInstance from '../../../configs/axiosInstance';
 
-const useContactUs = data => useSWR(`contactUs`, () => axiosInstance(`accounts/contact_us/`).then(res => res.data));
+const useContactUs = () => useSWRMutation(`contactUs`, (url, data) => axiosInstance.post('accounts/contact_us/', data));
 
 export default useContactUs;
