@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const language = Cookies.get('NEXT_LOCALE') || 'fa';
 
 const axiosInstance = axios.create({
-   baseURL: 'https://neuroweb.pythonanywhere.com/api/',
+   baseURL: 'https://neuro-code.iran.liara.run/api/',
    params: {
       lang: language,
    },
