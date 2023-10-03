@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 // Assets
 import '../globals.css';
+import metaPic from '../assets/images/metaPic.png';
 
 // Components
 import AppLayout from './components/layout/app-layout';
@@ -10,10 +11,10 @@ import AppLayout from './components/layout/app-layout';
 export const metadata = {
    title: 'neuro-code',
    description:
-      'طراحی سایت‌های حرفه‌ای و برتر با استفاده از طراحان ماهر و به‌روز و فن‌آوری روز دنیا. طراحی و تولید سایت های شخصی سازه شده شرکتی ، فروشگاهی ، آموزشی ، تبلیغاتی و ...', //
+      'طراحی سایت‌های حرفه‌ای و برتر با استفاده از طراحان ماهر و به‌روز و فن‌آوری روز دنیا. طراحی و تولید سایت های شخصی سازه شده شرکتی ، فروشگاهی ، آموزشی ، تبلیغاتی و ...',
    keywords: 'طراحی سایت, خدمات طراحی وب, طراحی سایت حرفه‌ای',
    author: 'علی ازقندی',
-   image: 'https://example.com/image.jpg', //
+   image: metaPic,
    url: 'https://neuro-code.ir',
    type: 'website',
    siteName: 'neuro-code',

@@ -22,7 +22,11 @@ function Search() {
 
    return (
       <div className="relative pb-20">
-         <p className={`mt-12 text-xl font-bold text-textColor customMd:text-4xl ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
+         <p
+            className={`mt-12 text-xl font-bold text-textColor customMd:text-4xl ${
+               locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'
+            }`}
+         >
             {t('search result of')} " {decodedSlug} "
          </p>
 
@@ -35,7 +39,7 @@ function Search() {
                <Grid container spacing={4}>
                   {searchedArticlesData?.result?.map(item => (
                      <Grid item xs={12} sm={6} lg={4} key={item.id}>
-                        <ArticleCard title={item.title} description={item.short_description} cover={item.image} id={item.id} />
+                        <ArticleCard title={item.title} description={item.short_description} cover={item.image} />
                      </Grid>
                   ))}
                </Grid>

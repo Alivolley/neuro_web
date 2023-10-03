@@ -20,7 +20,11 @@ function AllArticles() {
 
    return (
       <div className="pb-20">
-         <p className={`mt-12 text-lg text-textColor customMd:text-2xl ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
+         <p
+            className={`mt-12 text-lg text-textColor customMd:text-2xl ${
+               locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'
+            }`}
+         >
             {t('articles title')}
          </p>
          <div className="mt-5">
@@ -36,7 +40,7 @@ function AllArticles() {
                <Grid container spacing={4}>
                   {allArticlesData?.result?.map(item => (
                      <Grid item xs={12} sm={6} lg={4} key={item.id}>
-                        <ArticleCard title={item.title} description={item.short_description} cover={item.image} id={item.id} />
+                        <ArticleCard title={item.title} description={item.short_description} cover={item.image} />
                      </Grid>
                   ))}
                </Grid>

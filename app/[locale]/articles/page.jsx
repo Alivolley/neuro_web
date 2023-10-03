@@ -44,7 +44,11 @@ function Articles() {
          <div className="mt-12">
             <HeaderTitle>{t('articles')}</HeaderTitle>
          </div>
-         <p className={`mt-5 text-lg text-textColor customMd:text-2xl ${locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'}`}>
+         <p
+            className={`mt-5 text-lg text-textColor customMd:text-2xl ${
+               locale === 'fa' ? 'font-picoopicRegular' : 'font-avgardn'
+            }`}
+         >
             {t('articles title')}
          </p>
 
@@ -73,13 +77,29 @@ function Articles() {
             <div className="mb-3">
                <Link
                   href={`/allArticles/${
-                     tabsValue === 0 ? 'all' : tabsValue === 1 ? 'frontend' : tabsValue === 2 ? 'backend' : tabsValue === 3 ? 'uiux' : ''
+                     tabsValue === 0
+                        ? 'all'
+                        : tabsValue === 1
+                        ? 'frontend'
+                        : tabsValue === 2
+                        ? 'backend'
+                        : tabsValue === 3
+                        ? 'uiux'
+                        : ''
                   }`}
                >
                   <ButtonTemplate
                      text={t(
                         `All ${
-                           tabsValue === 0 ? '' : tabsValue === 1 ? 'frontend' : tabsValue === 2 ? 'backend' : tabsValue === 3 ? 'uiux' : ''
+                           tabsValue === 0
+                              ? ''
+                              : tabsValue === 1
+                              ? 'frontend'
+                              : tabsValue === 2
+                              ? 'backend'
+                              : tabsValue === 3
+                              ? 'uiux'
+                              : ''
                         } articles`
                      )}
                      icon={locale === 'fa' ? arrowIconReverse : arrowIcon}
@@ -99,7 +119,7 @@ function Articles() {
                      (item, index) =>
                         index < 3 && (
                            <Grid item xs={12} sm={6} lg={4} key={item.id}>
-                              <ArticleCard title={item.title} description={item.short_description} cover={item.image} id={item.id} />
+                              <ArticleCard title={item.title} description={item.short_description} cover={item.image} />
                            </Grid>
                         )
                   )}
